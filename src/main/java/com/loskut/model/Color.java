@@ -1,0 +1,72 @@
+package com.loskut.model;
+
+import javax.persistence.*;
+
+/**
+ * Created by RAYANT on 15.01.2016.
+ */
+
+@Entity
+@Table(name="colors")
+public class Color {
+
+
+    @Id
+    @Column(name = "id")
+    @SequenceGenerator(name="auto_id_color",
+            sequenceName="auto_id_color",
+            allocationSize=1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+            generator="auto_id_color")
+    private int id;
+
+    private int red;
+
+    private int green;
+
+    private int blue;
+
+    @JoinColumn(name = "id_cloth")
+    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+    private Cloth cloth;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getRed() {
+        return red;
+    }
+
+    public void setRed(int red) {
+        this.red = red;
+    }
+
+    public int getGreen() {
+        return green;
+    }
+
+    public void setGreen(int green) {
+        this.green = green;
+    }
+
+    public int getBlue() {
+        return blue;
+    }
+
+    public void setBlue(int blue) {
+        this.blue = blue;
+    }
+
+    public Cloth getCloth() {
+        return cloth;
+    }
+
+    public void setCloth(Cloth cloth) {
+        this.cloth = cloth;
+    }
+}

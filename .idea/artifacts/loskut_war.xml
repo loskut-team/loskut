@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="loskut:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="loskut.war">
+      <element id="artifact" artifact-name="loskut:war exploded" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

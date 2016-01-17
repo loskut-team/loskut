@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - loskut@localhost" uuid="be944999-aa18-4b74-b4a6-945818ee399c">
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+      <schema-pattern>loskut.pg_catalog loskut.public</schema-pattern>
+      <default-schemas>loskut.pg_catalog loskut.public</default-schemas>
+    </data-source>
+  </component>
+</project>
