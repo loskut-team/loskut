@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2626349530">
-    <data-source source="LOCAL" name="PostgreSQL - loskut@localhost" uuid="be944999-aa18-4b74-b4a6-945818ee399c">
+  <component name="DataSourceManagerImpl" format="xml" hash="1035435141">
+    <data-source source="LOCAL" name="PostgreSQL - ddonortcto558e?sslmode=require&amp;user=eicqaecjilmtsv&amp;password=4VCx9xSgXxhawe6Jg2WdWHQPcG@ec2-54-217-238-100.eu-west-1.compute.amazonaws.com" uuid="fdf05a15-5074-4130-9c88-8195327d7e20">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5433/loskut</jdbc-url>
+      <jdbc-url>jdbc:postgresql://ec2-54-217-238-100.eu-west-1.compute.amazonaws.com:5432/ddonortcto558e?sslmode=require&amp;user=eicqaecjilmtsv&amp;password=4VCx9xSgXxhawe6Jg2WdWHQPcG</jdbc-url>
       <libraries />
     </data-source>
   </component>
