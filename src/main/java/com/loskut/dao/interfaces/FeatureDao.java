@@ -5,5 +5,5 @@ import com.loskut.model.Feature;
 /**
  * Created by RAYANT on 16.01.2016.
  */
-public interface FeatureDao extends GenericDao<Feature> {
+public interface FeatureDao extends GenericDao<Integer, Feature> {
 }

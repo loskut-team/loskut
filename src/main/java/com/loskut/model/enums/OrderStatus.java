@@ -5,6 +5,7 @@ package com.loskut.model.enums;
  */
 public enum OrderStatus {
 
-    CONFIRMED
+    CONFIRMED,
+    RECEIVED
 
 }

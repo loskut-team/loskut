@@ -30,6 +30,9 @@ public class ClothType {
     @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     private Cloth cloth;
 
+    public ClothType() {
+    }
+
     public int getId() {
         return id;
     }

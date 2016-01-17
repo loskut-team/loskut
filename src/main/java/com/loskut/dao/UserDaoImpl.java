@@ -12,16 +12,6 @@ import org.springframework.stereotype.Repository;
 @Repository("userDao")
 public class UserDaoImpl extends AbstractDao<Integer,User> implements UserDao {
 
-    public User findById(int id) {
-        return getByKey(id);
-    }
-
-    public void save(User user) {
-        persist(user);
-    }
-
-    public void delete(User user) {deleteEntity(user);}
-
     public User findUserByLogin(String login) {
         Criteria criteria = createEntityCriteria();
         criteria.add(Restrictions.eq("login", login));

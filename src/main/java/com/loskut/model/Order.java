@@ -29,7 +29,10 @@ public class Order {
     @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     private User user;
 
-    @OneToMany (fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "order")
+    public Order() {
+    }
+
+    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "order")
     private Set<Cloth> clothSet;
 
     @Column(name = "total_price")
@@ -38,4 +41,44 @@ public class Order {
 
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Set<Cloth> getClothSet() {
+        return clothSet;
+    }
+
+    public void setClothSet(Set<Cloth> clothSet) {
+        this.clothSet = clothSet;
+    }
+
+    public BigDecimal getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(BigDecimal totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(OrderStatus status) {
+        this.status = status;
+    }
 }

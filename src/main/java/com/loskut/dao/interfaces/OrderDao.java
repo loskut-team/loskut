@@ -5,5 +5,5 @@ import com.loskut.model.Order;
 /**
  * Created by RAYANT on 16.01.2016.
  */
-public interface OrderDao extends GenericDao<Order> {
+public interface OrderDao extends GenericDao<Integer, Order> {
 }

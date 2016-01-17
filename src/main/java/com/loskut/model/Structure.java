@@ -31,6 +31,9 @@ public class Structure {
     @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     private Cloth cloth;
 
+    public Structure() {
+    }
+
     public int getId() {
         return id;
     }

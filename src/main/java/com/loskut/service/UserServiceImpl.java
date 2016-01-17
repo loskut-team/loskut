@@ -20,22 +20,27 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private  UserDao dao;
 
-    public User findById(int id) {
+    @Override
+    public User findById(Integer id) {
         return dao.findById(id);
     }
 
+    @Override
     public void save(User user) {
         dao.save(user);
     }
 
+    @Override
     public void delete(User user) {
         dao.delete(user);
     }
 
+    @Override
     public List<User> listAll() {
         return dao.listAll();
     }
 
+    @Override
     public User findUserByLogin(String login) {
         return dao.findUserByLogin(login);
     }

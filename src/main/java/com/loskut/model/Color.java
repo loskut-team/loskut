@@ -26,6 +26,9 @@ public class Color {
 
     private int blue;
 
+    public Color() {
+    }
+
     @JoinColumn(name = "id_cloth")
     @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     private Cloth cloth;

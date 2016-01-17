@@ -25,7 +25,7 @@
 
     <ul class="nav">
       <li>
-        <a href="/">Главная</a>
+        <a href="/admin">Паналь управления</a>
       </li>
       <li><a href="/logout">Выйти</a></li>
     </ul>

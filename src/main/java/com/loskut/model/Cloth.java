@@ -24,14 +24,24 @@ public class Cloth {
 
     private String sku;
 
+    private String src;
+
+    public Cloth() {
+    }
+
     @JoinColumn(name = "id_order")
-    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
     private Order order;
 
     @Digits(integer=8, fraction=2)
     @Column(name = "price_per_meter")
     private BigDecimal pricePerMeter;
 
+    @Digits(integer=8, fraction=2)
+    private BigDecimal length;
+
+    @Digits(integer=8, fraction=2)
+    private BigDecimal width;
 
     @Digits(integer=8, fraction=2)
     @Column(name = "total_price")
@@ -63,6 +73,14 @@ public class Cloth {
 
     public void setSku(String sku) {
         this.sku = sku;
+    }
+
+    public String getSrc() {
+        return src;
+    }
+
+    public void setSrc(String src) {
+        this.src = src;
     }
 
     public void setOrder(Order order) {
@@ -111,6 +129,22 @@ public class Cloth {
 
     public void setPricePerMeter(BigDecimal pricePerMeter) {
         this.pricePerMeter = pricePerMeter;
+    }
+
+    public BigDecimal getLength() {
+        return length;
+    }
+
+    public void setLength(BigDecimal length) {
+        this.length = length;
+    }
+
+    public BigDecimal getWidth() {
+        return width;
+    }
+
+    public void setWidth(BigDecimal width) {
+        this.width = width;
     }
 
     public BigDecimal getTotalPrice() {

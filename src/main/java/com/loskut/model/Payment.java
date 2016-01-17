@@ -36,4 +36,7 @@ public class Payment {
 
     @Column(name = "date_time")
     private Date date;
+
+    public Payment() {
+    }
 }

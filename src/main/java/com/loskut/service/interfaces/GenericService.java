@@ -1,20 +1,19 @@
 package com.loskut.service.interfaces;
 
-import com.loskut.model.User;
-
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by RAYANT on 16.01.2016.
  */
-public interface GenericService<T> {
+public interface GenericService<PK extends Serializable, T> {
 
-    T findById(int id);
+    T findById(PK id);
 
     void save(T entity);
 
-    void delete(T entity);
+    void  delete(T entity);
 
-    List<User> listAll();
+    List<T> listAll();
 
 }

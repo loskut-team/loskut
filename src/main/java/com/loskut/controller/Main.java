@@ -20,7 +20,7 @@ public class Main {
     private  UserService userService;
 
     @RequestMapping("/")
-    public String main(ModelMap model) {
+       public String main(ModelMap model) {
         List<User> users = userService.listAll();
         model.addAttribute("users", users);
         return "index";

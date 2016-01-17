@@ -1,5 +1,6 @@
 package com.loskut.dao;
 
+import com.loskut.dao.interfaces.GenericDao;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,7 +10,7 @@ import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
-public abstract class AbstractDao<PK extends Serializable, T> {
+public abstract class AbstractDao<PK extends Serializable, T> implements GenericDao<PK, T> {
 	
 	private final Class<T> persistentClass;
 	
@@ -26,21 +27,25 @@ public abstract class AbstractDao<PK extends Serializable, T> {
 	}
 
 	@SuppressWarnings("unchecked")
-	public T getByKey(PK key) {
+	@Override
+	public T findById(PK key) {
 		return (T) getSession().get(persistentClass, key);
 	}
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public List<T> listAll(){
 		Criteria criteria = createEntityCriteria();
 		return (List<T>) criteria.list();
 	}
 
-	public void persist(T entity) {
+	@Override
+	public void save(T entity) {
 		getSession().persist(entity);
 	}
 
-	public void deleteEntity(T entity) {
+	@Override
+	public void delete(T entity) {
 		getSession().delete(entity);
 	}
 	

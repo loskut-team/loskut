@@ -27,6 +27,9 @@ public class Feature {
     @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     private Cloth cloth;
 
+    public Feature() {
+    }
+
     public int getId() {
         return id;
     }

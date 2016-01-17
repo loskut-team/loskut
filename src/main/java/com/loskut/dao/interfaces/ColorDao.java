@@ -5,5 +5,5 @@ import com.loskut.model.Color;
 /**
  * Created by RAYANT on 16.01.2016.
  */
-public interface ColorDao extends GenericDao<Color> {
+public interface ColorDao extends GenericDao<Integer, Color> {
 }
