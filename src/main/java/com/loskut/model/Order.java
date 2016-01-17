@@ -26,7 +26,7 @@ public class Order {
     private int id;
 
     @JoinColumn(name = "id_client")
-    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
     private User user;
 
     public Order() {

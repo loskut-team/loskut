@@ -30,7 +30,7 @@ public class Color {
     }
 
     @JoinColumn(name = "id_cloth")
-    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
     private Cloth cloth;
 
     public int getId() {

@@ -47,16 +47,16 @@ public class Cloth {
     @Column(name = "total_price")
     private BigDecimal totalPrice;
 
-    @OneToMany (fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
     private Set<Color> colors;
 
-    @OneToMany (fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
     private Set<Structure> structures;
 
-    @OneToMany (fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
     private Set<Feature> features;
 
-    @OneToMany (fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
     private Set<ClothType> tupes;
 
     public int getId() {

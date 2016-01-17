@@ -55,10 +55,10 @@ public class User {
     @Column(name = "balance")
     private BigDecimal balance;
 
-    @OneToMany (fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "user")
     private Set<Order> orders;
 
-    @OneToMany (fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "user")
     private Set<Payment> payments;
 
     public String getPhone() {
