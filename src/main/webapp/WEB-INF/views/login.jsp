@@ -13,10 +13,10 @@
   <title>Spring Security</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="/WEB-INF/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="/WEB-INF/css/signin.css" rel="stylesheet">
+  <link href="/resources/css/signin.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
