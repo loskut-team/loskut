@@ -19,7 +19,7 @@ public class Main {
     @Autowired
     private  UserService userService;
 
-    @RequestMapping("/")
+    @RequestMapping(value = {"/"})
        public String main(ModelMap model) {
         List<User> users = userService.listAll();
         model.addAttribute("users", users);
