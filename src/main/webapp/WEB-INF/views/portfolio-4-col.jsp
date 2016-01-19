@@ -45,7 +45,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/index">Start Bootstrap</a>
+                <a class="navbar-brand" href="/">Start Bootstrap</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -130,7 +130,7 @@
                     <small>Subheading</small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="/index">Home</a>
+                    <li><a href="/">Home</a>
                     </li>
                     <li class="active">Four Column Portfolio</li>
                 </ol>

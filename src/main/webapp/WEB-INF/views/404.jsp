@@ -45,7 +45,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/index">Start Bootstrap</a>
+                <a class="navbar-brand" href="/">Start Bootstrap</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -130,7 +130,7 @@
                     <small>Page Not Found</small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="/index">Home</a>
+                    <li><a href="/">Home</a>
                     </li>
                     <li class="active">404</li>
                 </ol>
@@ -147,7 +147,7 @@
                     <p>The page you're looking for could not be found. Here are some helpful links to get you back on track:</p>
                     <ul>
                         <li>
-                            <a href="/index">Home</a>
+                            <a href="/">Home</a>
                         </li>
                         <li>
                             <a href="/about">About</a>
