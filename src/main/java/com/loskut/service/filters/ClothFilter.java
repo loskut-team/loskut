@@ -12,6 +12,8 @@ import java.util.Set;
  * Created by Optical Illusion on 19.01.2016.
  */
 public class ClothFilter {
+    private int firstResult;
+    private int maxResults;
     private BigDecimal pricePerMeterMin;
     private BigDecimal pricePerMeterMax;
     private BigDecimal totalPriceMin;
@@ -23,6 +25,22 @@ public class ClothFilter {
     private Set<ClothType> clothTypes;
 
     public ClothFilter() {
+    }
+
+    public int getFirstResult() {
+        return firstResult;
+    }
+
+    public void setFirstResult(int firstResult) {
+        this.firstResult = firstResult;
+    }
+
+    public int getMaxResults() {
+        return maxResults;
+    }
+
+    public void setMaxResults(int maxResults) {
+        this.maxResults = maxResults;
     }
 
     public BigDecimal getPricePerMeterMin() {
