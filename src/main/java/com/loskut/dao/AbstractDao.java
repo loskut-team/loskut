@@ -50,7 +50,7 @@ public abstract class AbstractDao<PK extends Serializable, T> implements Generic
 	}
 	
 	protected Criteria createEntityCriteria(){
-		return getSession().createCriteria(persistentClass);
+		return getSession().createCriteria(persistentClass, persistentClass.getName());
 	}
 
 }
