@@ -30,7 +30,7 @@ public class ClothRestController {
     @RequestMapping(value = "/cloth/read/all", method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<EntityPage<Cloth>> listAllProfiles(@RequestBody ClothFilter clothFilter) {
-        EntityPage<Cloth> clothEntityPage = clothService.listAll();
+        EntityPage<Cloth> clothEntityPage = clothService.listAllWithFilter(clothFilter);
         if (clothEntityPage.getEntities().isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }

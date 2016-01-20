@@ -2,7 +2,9 @@ package com.loskut.service;
 
 import com.loskut.dao.interfaces.ClothDao;
 import com.loskut.model.Cloth;
+import com.loskut.service.filters.ClothFilter;
 import com.loskut.service.interfaces.ClothService;
+import com.loskut.util.EntityPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,5 +40,10 @@ public class ClothServiceImpl implements ClothService {
     @Override
     public List<Cloth> listAll() {
         return dao.listAll();
+    }
+
+    @Override
+    public EntityPage<Cloth> listAllWithFilter(ClothFilter clothFilter) {
+        return dao.listAllWithFilter(clothFilter);
     }
 }

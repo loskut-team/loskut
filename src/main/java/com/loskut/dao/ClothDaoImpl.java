@@ -25,10 +25,14 @@ public class ClothDaoImpl extends AbstractDao<Integer, Cloth> implements ClothDa
         Criteria criteria = createEntityCriteria();
         criteria.setFirstResult(clothFilter.getFirstResult());
         criteria.setMaxResults(clothFilter.getMaxResults());
-        criteria.add(Restrictions.between("price_per_meter", clothFilter.getPricePerMeterMin(), clothFilter.getPricePerMeterMax()));
-        criteria.add(Restrictions.between("total_price", clothFilter.getTotalPriceMin(), clothFilter.getTotalPriceMax()));
-        Number count = (Number) criteria.setProjection(Projections.rowCount());
+        criteria.add(Restrictions.between("pricePerMeter", clothFilter.getPricePerMeterMin(), clothFilter.getPricePerMeterMax()));
+        criteria.add(Restrictions.between("totalPrice", clothFilter.getTotalPriceMin(), clothFilter.getTotalPriceMax()));
         List<Cloth> result = (List<Cloth>) criteria.list();
+        //ToDo Fix Bug
+        criteria = createEntityCriteria();
+        criteria.add(Restrictions.between("pricePerMeter", clothFilter.getPricePerMeterMin(), clothFilter.getPricePerMeterMax()));
+        criteria.add(Restrictions.between("totalPrice", clothFilter.getTotalPriceMin(), clothFilter.getTotalPriceMax()));
+        Number count = (Number) criteria.setProjection(Projections.rowCount()).uniqueResult();
         EntityPage<Cloth> entityPage = new EntityPage<>();
         entityPage.setTotalEntities((Long)count);
         entityPage.setEntities(result);
