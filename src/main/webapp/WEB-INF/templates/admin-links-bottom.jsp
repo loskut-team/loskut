@@ -12,11 +12,8 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="/resources/js/bootstrap.min.js"></script>
 
-<!-- Metis Menu Plugin JavaScript DELETED -->
-
-
-
-
+<!-- Metis Menu Plugin JavaScript -->
+<script src="/resources/js/metisMenu.min.js"></script>
 
 <!-- DataTables JavaScript -->
 <script src="/resources/js/jquery.dataTables.min.js"></script>

@@ -5,26 +5,6 @@
   Time: 18:14
   To change this template use File | Settings | File Templates.
 --%>
-<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
-<%--<html>--%>
-<%--<head>--%>
-    <%--<title></title>--%>
-<%--</head>--%>
-<%--<body>--%>
-<%--<c:forEach var="cloth" items="${clothList}" >--%>
-  <%--<div>--%>
-   <%--<h2>Артикул: ${cloth.sku}</h2>--%>
-   <%--<h2>Номер заказа: ${cloth.order.id}</h2>--%>
-   <%--<h2>Цена полная: ${cloth.totalPrice}</h2>--%>
-   <%--<h2>Цена за метр: ${cloth.totalPrice}</h2>--%>
-   <%--<h2>Длина: ${cloth.length}</h2>--%>
-   <%--<h2>Ширина: ${cloth.width}</h2>--%>
-    <%--<img src="${cloth.src}" width="200px" height="200px">--%>
-  <%--</div>--%>
-  <%--<br>--%>
-<%--</c:forEach>--%>
-<%--</body>--%>
-<%--</html>--%>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
@@ -70,6 +50,10 @@
                                 <tr>
                                     <th>Фото</th>
                                     <th>Id</th>
+                                    <th>Ширина</th>
+                                    <th>Длина</th>
+                                    <th>Ц. 1 м</th>
+                                    <th>Total</th>
                                 </tr>
                                 </thead>
                             </table>
@@ -101,31 +85,10 @@
 <jsp:include page="/WEB-INF/templates/admin-links-bottom.jsp"/>
 <!-- /Admin bottom links -->
 <script>
-    var idCorrect = [];
-    var data = '${clothList}';
-    alert(JSON.stringify(data));
-
-
-    <%--<c:forEach var="cloth" items="${clothList.entities}">--%>
-    <%--<div>--%>
-    <%--<h2>Артикул: ${cloth.sku}</h2>--%>
-
-    <%--<h2>Номер заказа: ${cloth.order.id}</h2>--%>
-
-    <%--<h2>Цена полная: ${cloth.totalPrice}</h2>--%>
-
-    <%--<h2>Цена за метр: ${cloth.totalPrice}</h2>--%>
-
-    <%--<h2>Длина: ${cloth.length}</h2>--%>
-
-    <%--<h2>Ширина: ${cloth.width}</h2>--%>
-    <%--<img src="${cloth.src}" width="200px" height="200px">--%>
-            <%--</div>--%>
-            <%--<br>--%>
-            <%--</c:forEach>--%>
-
 
     $(document).ready(function () {
+        var idCorrect = [];
+        var data = ${clothList};
 
     for (var i = 0; i < data.length; i++) {
             if (data[i].src.length > 2) {
@@ -134,7 +97,6 @@
             else {
                 data[i].contact.pic = '<img src="/resources/images/no_photo.jpg" width="100" height="100">';
             }
-
     }
 
     var table = $('#users').DataTable({
@@ -144,7 +106,11 @@
         data: data,
         "columns": [
             {"data": "src"},
-            {"data": "sku"}
+            {"data": "sku"},
+            {"data": "width"},
+            {"data": "length"},
+            {"data": "pricePerMeter"},
+            {"data": "totalPrice"}
         ],
         "language": {
             "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Russian.json"
