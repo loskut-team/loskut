@@ -14,10 +14,10 @@ import java.util.Set;
 public class ClothFilter {
     private int firstResult;
     private int maxResults;
-    private BigDecimal pricePerMeterMin = new BigDecimal(0);
-    private BigDecimal pricePerMeterMax = new BigDecimal(1000_000);
-    private BigDecimal totalPriceMin = new BigDecimal(0);
-    private BigDecimal totalPriceMax = new BigDecimal(1000_000);
+    private BigDecimal pricePerMeterMin;
+    private BigDecimal pricePerMeterMax;
+    private BigDecimal totalPriceMin;
+    private BigDecimal totalPriceMax;
     private Color color;
     private int range = 256;
     private Set<Structure> structures;

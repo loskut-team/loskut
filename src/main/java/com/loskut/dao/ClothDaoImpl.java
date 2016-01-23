@@ -2,11 +2,9 @@ package com.loskut.dao;
 
 import com.loskut.dao.interfaces.ClothDao;
 import com.loskut.model.Cloth;
-import com.loskut.model.User;
 import com.loskut.service.filters.ClothFilter;
 import com.loskut.util.EntityPage;
 import org.hibernate.Criteria;
-import org.hibernate.criterion.Projection;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -22,20 +20,32 @@ public class ClothDaoImpl extends AbstractDao<Integer, Cloth> implements ClothDa
 
     @Override
     public EntityPage<Cloth> listAllWithFilter(ClothFilter clothFilter) {
-        Criteria criteria = createEntityCriteria();
+        Criteria criteria = createCriteriaForClothFilter(clothFilter);
         criteria.setFirstResult(clothFilter.getFirstResult());
         criteria.setMaxResults(clothFilter.getMaxResults());
-        criteria.add(Restrictions.between("pricePerMeter", clothFilter.getPricePerMeterMin(), clothFilter.getPricePerMeterMax()));
-        criteria.add(Restrictions.between("totalPrice", clothFilter.getTotalPriceMin(), clothFilter.getTotalPriceMax()));
         List<Cloth> result = (List<Cloth>) criteria.list();
-        //ToDo Fix Bug
-        criteria = createEntityCriteria();
-        criteria.add(Restrictions.between("pricePerMeter", clothFilter.getPricePerMeterMin(), clothFilter.getPricePerMeterMax()));
-        criteria.add(Restrictions.between("totalPrice", clothFilter.getTotalPriceMin(), clothFilter.getTotalPriceMax()));
-        Number count = (Number) criteria.setProjection(Projections.rowCount()).uniqueResult();
         EntityPage<Cloth> entityPage = new EntityPage<>();
-        entityPage.setTotalEntities((Long)count);
+        entityPage.setTotalEntities(count(clothFilter));
         entityPage.setEntities(result);
         return entityPage;
     }
+
+    private Long count(ClothFilter clothFilter){
+        Criteria criteria = createCriteriaForClothFilter(clothFilter);
+        Number count = (Number) criteria.setProjection(Projections.rowCount()).uniqueResult();
+        return (Long)count;
+    }
+
+    private Criteria createCriteriaForClothFilter(ClothFilter clothFilter){
+        Criteria criteria = createEntityCriteria();
+        if (clothFilter.getPricePerMeterMin()!=null) criteria.add(Restrictions.gt("pricePerMeter",clothFilter.getPricePerMeterMin()));
+        if (clothFilter.getPricePerMeterMax()!=null) criteria.add(Restrictions.lt("pricePerMeter", clothFilter.getPricePerMeterMax()));
+        if (clothFilter.getTotalPriceMin()!= null) criteria.add(Restrictions.gt("totalPrice", clothFilter.getTotalPriceMin()));
+        if (clothFilter.getTotalPriceMax()!= null) criteria.add(Restrictions.lt("totalPrice", clothFilter.getTotalPriceMax()));
+        return criteria;
+    }
+
+
+
+
 }
