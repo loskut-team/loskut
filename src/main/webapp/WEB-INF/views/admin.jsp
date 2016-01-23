@@ -53,7 +53,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Пользователи</h1>
+                <h1 class="page-header">Ткани</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -69,17 +69,15 @@
                                 <thead>
                                 <tr>
                                     <th>Фото</th>
-                                    <th>ФИО/организация</th>
-                                    <th>email</th>
-                                    <th>Статус</th>
+                                    <th>Id</th>
                                 </tr>
                                 </thead>
                             </table>
                             <table class="table table-user-information">
                                 <tbody>
-                                <h3 class="panel-title">Редактировать профиль</h3>
+                                <h3 class="panel-title">Редактировать ткани</h3>
                                 <tr>
-                                    <td>ID пользователя:</td>
+                                    <td>ID ткани:</td>
                                     <td><input id="inp" class="form-control" name="transactionId" readonly required>
                                     </td>
                                 </tr>
@@ -103,8 +101,74 @@
 <jsp:include page="/WEB-INF/templates/admin-links-bottom.jsp"/>
 <!-- /Admin bottom links -->
 <script>
-//    var idCorrect = [];
-//
+    var idCorrect = [];
+    var data = '${clothList}';
+    alert(JSON.stringify(data));
+
+
+    <%--<c:forEach var="cloth" items="${clothList.entities}">--%>
+    <%--<div>--%>
+    <%--<h2>Артикул: ${cloth.sku}</h2>--%>
+
+    <%--<h2>Номер заказа: ${cloth.order.id}</h2>--%>
+
+    <%--<h2>Цена полная: ${cloth.totalPrice}</h2>--%>
+
+    <%--<h2>Цена за метр: ${cloth.totalPrice}</h2>--%>
+
+    <%--<h2>Длина: ${cloth.length}</h2>--%>
+
+    <%--<h2>Ширина: ${cloth.width}</h2>--%>
+    <%--<img src="${cloth.src}" width="200px" height="200px">--%>
+            <%--</div>--%>
+            <%--<br>--%>
+            <%--</c:forEach>--%>
+
+
+    $(document).ready(function () {
+
+    for (var i = 0; i < data.length; i++) {
+            if (data[i].src.length > 2) {
+                data[i].src = '<img src="' + data[i].src + '" width="100" height="100">';
+            }
+            else {
+                data[i].contact.pic = '<img src="/resources/images/no_photo.jpg" width="100" height="100">';
+            }
+
+    }
+
+    var table = $('#users').DataTable({
+        select: {
+            style: 'single'
+        },
+        data: data,
+        "columns": [
+            {"data": "src"},
+            {"data": "sku"}
+        ],
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Russian.json"
+        }
+    });
+
+    table
+            .on('select', function (e, dt, type, indexes) {
+                var rowData = table.rows(indexes).data().toArray();
+                $("input[name='transactionId']").attr("value", rowData[0].id);
+                $('#userIdhref').attr("href", "/edit-profile/" + rowData[0].id);
+                $('#inp').removeAttr("readonly");
+                $('#userIdBtn').attr("class", "btn btn-danger");
+            })
+            .on('deselect', function (e, dt, type, indexes) {
+                $("input[name='transactionId']").attr("value", "");
+                $('#inp').attr("readonly", "readonly");
+                $('#userIdBtn').attr("class", "btn btn-danger disabled");
+            });
+    });
+
+
+
+
 //    $(document).ready(function () {
 //        var data;
 //        var filterOptions = {};
@@ -116,6 +180,7 @@
 //            url: "/api/rest/profilesService/profile/read/all",
 //            data: JSON.stringify(filterOptions),
 //            success: function (response) {
+//                alert(JSON.stringify(response));
 //                data = response.entities;
 //
 //                for (var i = 0; i < data.length; i++) {
@@ -139,10 +204,8 @@
 //                    },
 //                    data: data,
 //                    "columns": [
-//                        {"data": "contact.pic"},
-//                        {"data": "username"},
-//                        {"data": "email"},
-//                        {"data": "confirmModerator"}
+//                        {"data": "src"},
+//                        {"data": "sku"}
 //                    ],
 //                    "language": {
 //                        "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Russian.json"
@@ -165,7 +228,7 @@
 //            }
 //        });
 //    });
-//
+
 //    function submitChanges() {
 //        $.ajax({
 //            type: "POST",
