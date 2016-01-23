@@ -1,11 +1,9 @@
 package com.loskut.controller;
 
 import com.loskut.model.Cloth;
-import com.loskut.service.filters.ClothFilter;
 import com.loskut.service.interfaces.ClothService;
 import com.loskut.service.interfaces.OrderService;
 import com.loskut.service.interfaces.UserService;
-import com.loskut.util.EntityPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -39,17 +37,7 @@ public class AdminController {
     }
 
     @RequestMapping("/test")
-    public String test(ModelMap model) {
-        try {
-            ClothFilter clothFilter = new ClothFilter();
-            clothFilter.setFirstResult(5);
-            clothFilter.setMaxResults(10);
-            EntityPage<Cloth> clothList = clothService.listAllWithFilter(clothFilter);
-            System.out.println(clothList);
-            model.addAttribute("clothList", clothList);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public String test() {
         return "test";
     }
 
