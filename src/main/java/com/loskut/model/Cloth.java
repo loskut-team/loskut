@@ -1,5 +1,8 @@
 package com.loskut.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import java.math.BigDecimal;
@@ -31,6 +34,7 @@ public class Cloth {
 
     @JoinColumn(name = "id_order")
     @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonBackReference
     private Order order;
 
     @Digits(integer=8, fraction=2)
@@ -48,15 +52,19 @@ public class Cloth {
     private BigDecimal totalPrice;
 
     @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @JsonManagedReference
     private Set<Color> colors;
 
     @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @JsonManagedReference
     private Set<Structure> structures;
 
     @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @JsonManagedReference
     private Set<Feature> features;
 
     @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @JsonManagedReference
     private Set<ClothType> tupes;
 
     public int getId() {

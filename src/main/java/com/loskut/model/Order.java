@@ -1,5 +1,7 @@
 package com.loskut.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.loskut.model.enums.OrderStatus;
 
 import javax.persistence.*;
@@ -27,12 +29,14 @@ public class Order {
 
     @JoinColumn(name = "id_client")
     @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonBackReference
     private User user;
 
     public Order() {
     }
 
     @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "order")
+    @JsonManagedReference
     private Set<Cloth> clothSet;
 
     @Column(name = "total_price")

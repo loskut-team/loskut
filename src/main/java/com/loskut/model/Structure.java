@@ -1,5 +1,6 @@
 package com.loskut.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.loskut.model.enums.Fabric;
 
 import javax.persistence.*;
@@ -29,6 +30,7 @@ public class Structure {
 
     @JoinColumn(name = "id_cloth")
     @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonBackReference
     private Cloth cloth;
 
     public Structure() {

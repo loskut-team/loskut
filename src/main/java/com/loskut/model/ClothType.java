@@ -1,5 +1,6 @@
 package com.loskut.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.loskut.model.enums.ClothTypeName;
 
 import javax.persistence.*;
@@ -28,6 +29,7 @@ public class ClothType {
 
     @JoinColumn(name = "id_cloth")
     @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonBackReference
     private Cloth cloth;
 
     public ClothType() {

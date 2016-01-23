@@ -3,7 +3,7 @@ package com.loskut.util;
 import java.util.List;
 
 public final class EntityPage<T> {
-    private long totalEntities;
+    private Long totalEntities;
     private List<T> entities;
 
     public EntityPage(long totalEntities, List<T> entities) {
@@ -14,11 +14,11 @@ public final class EntityPage<T> {
     public EntityPage() {
     }
 
-    public long getTotalEntities() {
+    public Long getTotalEntities() {
         return totalEntities;
     }
 
-    public void setTotalEntities(long totalEntities) {
+    public void setTotalEntities(Long totalEntities) {
         this.totalEntities = totalEntities;
     }
 
