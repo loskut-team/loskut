@@ -1,5 +1,7 @@
 package com.loskut.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 /**
@@ -25,6 +27,7 @@ public class Feature {
 
     @JoinColumn(name = "id_cloth")
     @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonBackReference
     private Cloth cloth;
 
     public Feature() {

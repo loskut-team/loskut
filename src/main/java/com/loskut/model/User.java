@@ -1,5 +1,6 @@
 package com.loskut.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.loskut.model.enums.UserRole;
 
 import javax.persistence.*;
@@ -56,9 +57,11 @@ public class User {
     private BigDecimal balance;
 
     @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "user")
+    @JsonManagedReference
     private Set<Order> orders;
 
     @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "user")
+    @JsonManagedReference
     private Set<Payment> payments;
 
     public String getPhone() {
