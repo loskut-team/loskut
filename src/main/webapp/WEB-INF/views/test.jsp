@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="resources/assets/mobirise-gallery/style.css">
     <link rel="stylesheet" href="resources/assets/mobirise-slider/style.css">
     <link rel="stylesheet" href="resources/assets/mobirise/css/mbr-additional.css" type="text/css">
+    <link rel="stylesheet" href="/resources/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
 <section class="mbr-gallery mbr-section mbr-section--no-padding" id="gallery1-2"
@@ -33,56 +34,7 @@
     <!-- Gallery -->
     <div class=" mbr-gallery-layout-default">
         <div>
-            <div id="gallery" class="row mbr-gallery-row no-gutter">
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mbr-gallery-item">
-                    <a href="#lb-gallery1-2" data-slide-to="0" data-toggle="modal">
-                        <img alt="" src="resources/assets/images/115000x3338-1492000x1335-167.jpg">
-                        <span class="icon glyphicon glyphicon-zoom-in"></span>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mbr-gallery-item">
-                    <a href="#lb-gallery1-2" data-slide-to="1" data-toggle="modal">
-                        <img alt="" src="resources/assets/images/25000x3338-1512000x1335-161.jpg">
-                        <span class="icon glyphicon glyphicon-zoom-in"></span>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mbr-gallery-item">
-                    <a href="#lb-gallery1-2" data-slide-to="2" data-toggle="modal">
-                        <img alt="" src="resources/assets/images/35000x3338-1632000x1335-187.jpg">
-                        <span class="icon glyphicon glyphicon-zoom-in"></span>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mbr-gallery-item">
-                    <a href="#lb-gallery1-2" data-slide-to="3" data-toggle="modal">
-                        <img alt="" src="resources/assets/images/45000x3338-1662000x1335-124.jpg">
-                        <span class="icon glyphicon glyphicon-zoom-in"></span>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mbr-gallery-item">
-                    <a href="#lb-gallery1-2" data-slide-to="4" data-toggle="modal">
-                        <img alt="" src="resources/assets/images/55000x3338-1802000x1335-183.jpg">
-                        <span class="icon glyphicon glyphicon-zoom-in"></span>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mbr-gallery-item">
-                    <a href="#lb-gallery1-2" data-slide-to="5" data-toggle="modal">
-                        <img alt="" src="resources/assets/images/65000x3338-1712000x1335-160.jpg">
-                        <span class="icon glyphicon glyphicon-zoom-in"></span>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mbr-gallery-item">
-                    <a href="#lb-gallery1-2" data-slide-to="6" data-toggle="modal">
-                        <img alt="" src="resources/assets/images/354600x3100-1902000x1348-160.jpg">
-                        <span class="icon glyphicon glyphicon-zoom-in"></span>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mbr-gallery-item">
-                    <a href="#lb-gallery1-2" data-slide-to="7" data-toggle="modal">
-                        <img alt="" src="resources/assets/images/424600x3100-1942000x1348-111.jpg">
-                        <span class="icon glyphicon glyphicon-zoom-in"></span>
-                    </a>
-                </div>
-            </div>
+            <div id="gallery" class="row mbr-gallery-row no-gutter"></div>
         </div>
         <div class="clearfix"></div>
     </div>
@@ -93,43 +45,10 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    <ol class="carousel-indicators">
-                        <li data-app-prevent-settings="" data-target="#lb-gallery1-2" data-slide-to="0"></li>
-                        <li data-app-prevent-settings="" data-target="#lb-gallery1-2" data-slide-to="1"></li>
-                        <li data-app-prevent-settings="" data-target="#lb-gallery1-2" data-slide-to="2"></li>
-                        <li data-app-prevent-settings="" data-target="#lb-gallery1-2" data-slide-to="3"></li>
-                        <li data-app-prevent-settings="" data-target="#lb-gallery1-2" data-slide-to="4"></li>
-                        <li data-app-prevent-settings="" data-target="#lb-gallery1-2" data-slide-to="5"></li>
-                        <li data-app-prevent-settings="" data-target="#lb-gallery1-2" data-slide-to="6"></li>
-                        <li data-app-prevent-settings="" data-target="#lb-gallery1-2" class=" active"
-                            data-slide-to="7"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="item">
-                            <img alt="" src="resources/assets/images/115000x3338-149.jpg">
-                        </div>
-                        <div class="item">
-                            <img alt="" src="resources/assets/images/25000x3338-151.jpg">
-                        </div>
-                        <div class="item">
-                            <img alt="" src="resources/assets/images/35000x3338-163.jpg">
-                        </div>
-                        <div class="item">
-                            <img alt="" src="resources/assets/images/45000x3338-166.jpg">
-                        </div>
-                        <div class="item">
-                            <img alt="" src="resources/assets/images/55000x3338-180.jpg">
-                        </div>
-                        <div class="item">
-                            <img alt="" src="resources/assets/images/65000x3338-171.jpg">
-                        </div>
-                        <div class="item">
-                            <img alt="" src="resources/assets/images/354600x3100-190.jpg">
-                        </div>
-                        <div class="item active">
-                            <img alt="" src="resources/assets/images/424600x3100-194.jpg">
-                        </div>
+
+                    <div id ="carousel" class="carousel-inner">
                     </div>
+
                     <a class="left carousel-control" role="button" data-slide="prev" href="#lb-gallery1-2">
                         <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
@@ -138,13 +57,19 @@
                         <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
-
                     <a class="close" href="#" role="button" data-dismiss="modal">
                         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                         <span class="sr-only">Close</span>
                     </a>
+
+
                 </div>
             </div>
+
+            <div id="right-info" class="modal-body"></div>
+
+
+        </div>
         </div>
     </div>
 </section>
@@ -161,6 +86,9 @@
 <script src="resources/assets/mobirise-gallery/script.js"></script>
 
 <script>
+    var content = [];
+
+
    $(document).ready(function(){
        $.ajax({
            type: "POST",
@@ -168,13 +96,43 @@
            contentType: "application/json; charset=utf-8",
            dataType: "json",
            success: function (data) {
-                alert(JSON.stringify(data))
-                for(var i in data.entities){
-                   $('#gallery').append('<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mbr-gallery-item"> <a href="#lb-gallery1-2" data-slide-to="'+i+'" data-toggle="modal"> <img alt="" src="'+data.entities[i].src+'"><span class="icon glyphicon glyphicon-zoom-in"></span></a></div>');
+             content = content.concat(data.entities);
+               var gallery = $('#gallery');
+               var carousel = $('#carousel');
+                for(var i = 0; i < data.entities.length - 1; i++){
+                    gallery.append('<div name="' + i + '" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mbr-gallery-item"><a href="#lb-gallery1-2" data-slide-to="' + i + '" data-toggle="modal"> <img alt="" src="' + data.entities[i].src + '"><span class="icon glyphicon glyphicon-zoom-in"></span></a></div>');
+                    carousel.append('<div id=' + i + ' class="item"><div></div><img alt="" src="' + data.entities[i].src + '"></div>');
                 }
+               gallery.append('<div name="' + (data.entities.length - 1) + '" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mbr-gallery-item"><a href="#lb-gallery1-2" data-slide-to="' + (data.entities.length - 1) + '" data-toggle="modal"> <img alt="" src="' + data.entities[data.entities.length - 1].src + '"><span class="icon glyphicon glyphicon-zoom-in"></span></a></div>');
+               carousel.append('<div id=' + i + ' class="item active"><img alt="" src="' + data.entities[data.entities.length - 1].src + '"></div>');
+
+               $('.carousel-control, .mbr-gallery-item').click(function () {
+                   setTimeout(function () {
+                       var activeId = $('.active').attr('id');
+                       var item = data.entities[activeId];
+                       var rightInfo = $('#right-info').html("");
+                       var sku = '<div style="margin-top: -500px; margin-left: 650px"><div style="color: #ffffff"><h2>Артикул:' + item.sku + '</h2></div>';
+                       var length = '<div style="color: #ffffff"><h2>Длинна:' + item.length + '</h2></div>';
+                       var width = '<div style="color: #ffffff"><h2>Ширина:' + item.width + '</h2></div>';
+                       var pricePerMeter = '<div style="color: #ffffff"><h2>Цена за метр: ' + item.pricePerMeter + '</h3></div>';
+                       var totalPrice = '<div style="color: #ffffff"><h2>Общая цена: ' + item.totalPrice + '</h2></div>';
+                       var button = '<button onclick="onAddClick(' + activeId + ')"  type="button" data-dismiss="modal" class="btn btn-danger">В корзину</button></div>';
+                       rightInfo.append(sku + length + width + pricePerMeter + totalPrice + button)
+                   }, 750);
+               });
            }
        });
    });
+
+    var onAddClick = function (activeId) {
+        alert("Ткань с id: " + activeId + " добавлена в корзину");
+        content.splice(activeId,1);
+        alert(content.length);
+        $('#' + activeId).detach();
+        $('div[name='+activeId+']').detach();
+        $('#' + content.length-1).addClass("active");
+    }
+
 </script>
 
 </html>
