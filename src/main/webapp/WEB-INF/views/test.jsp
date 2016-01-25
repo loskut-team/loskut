@@ -27,6 +27,21 @@
     <link rel="stylesheet" href="resources/assets/mobirise-slider/style.css">
     <link rel="stylesheet" href="resources/assets/mobirise/css/mbr-additional.css" type="text/css">
     <link rel="stylesheet" href="/resources/font-awesome/css/font-awesome.min.css">
+<style>
+    .blur img {
+        -webkit-filter: url(#blur);
+        filter: url(#blur);
+        -webkit-filter: blur(10px);
+        filter: blur(10px);
+        filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
+        -webkit-transition: 1s -webkit-filter linear;
+        transition: 1s filter linear;
+    }
+
+    .blur img:hover {
+    -webkit-filter: blur(10px);
+    }
+</style>
 </head>
 <body>
 <section class="mbr-gallery mbr-section mbr-section--no-padding" id="gallery1-2"
@@ -87,9 +102,23 @@
 
 <script>
     var content = [];
+    var toCart = [];
+
+
+
 
 
    $(document).ready(function(){
+
+       $(window).scroll(function()
+       {
+           if($(window).scrollTop() == $(document).height() - $(window).height())
+           {
+               alert("крутим")
+           }
+       });
+
+
        $.ajax({
            type: "POST",
            url: "/cloth/read/all",
@@ -116,7 +145,16 @@
                        var width = '<div style="color: #ffffff"><h2>Ширина:' + item.width + '</h2></div>';
                        var pricePerMeter = '<div style="color: #ffffff"><h2>Цена за метр: ' + item.pricePerMeter + '</h3></div>';
                        var totalPrice = '<div style="color: #ffffff"><h2>Общая цена: ' + item.totalPrice + '</h2></div>';
-                       var button = '<button onclick="onAddClick(' + activeId + ')"  type="button" data-dismiss="modal" class="btn btn-danger">В корзину</button></div>';
+                       var button;
+                            for (var j in toCart){
+                                if (toCart[j].id === item.id){
+                                    button = '<button type="button" data-dismiss="modal" class="btn btn-info" disabled>В заказе</button></div>';
+                                    break;
+                                }
+                            }
+                       if (button === undefined){
+                           button = '<button onclick="onAddClick(' + activeId + ')"  type="button" data-dismiss="modal" class="btn btn-danger">В корзину</button></div>';
+                       }
                        rightInfo.append(sku + length + width + pricePerMeter + totalPrice + button)
                    }, 750);
                });
@@ -125,12 +163,9 @@
    });
 
     var onAddClick = function (activeId) {
-        alert("Ткань с id: " + activeId + " добавлена в корзину");
-        content.splice(activeId,1);
-        alert(content.length);
-        $('#' + activeId).detach();
+        toCart.push(content[activeId]);
         $('div[name='+activeId+']').detach();
-        $('#' + content.length-1).addClass("active");
+        $('#' + activeId).addClass('blur');
     }
 
 </script>
