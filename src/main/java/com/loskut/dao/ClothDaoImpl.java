@@ -37,7 +37,7 @@ public class ClothDaoImpl extends AbstractDao<Integer, Cloth> implements ClothDa
     private Criteria createCriteriaForClothFilter(ClothFilter clothFilter){
         Criteria criteria = createEntityCriteria();
         if (clothFilter.getFirstResult() != 0) criteria.setFirstResult(clothFilter.getFirstResult());
-        if (clothFilter.getMaxResults() != 0) criteria.setFirstResult(clothFilter.getMaxResults());
+        if (clothFilter.getMaxResults() != 0) criteria.setMaxResults(clothFilter.getMaxResults());
         if (clothFilter.getPricePerMeterMin()!=null) criteria.add(Restrictions.gt("pricePerMeter",clothFilter.getPricePerMeterMin()));
         if (clothFilter.getPricePerMeterMax()!=null) criteria.add(Restrictions.lt("pricePerMeter", clothFilter.getPricePerMeterMax()));
         if (clothFilter.getTotalPriceMin()!= null) criteria.add(Restrictions.gt("totalPrice", clothFilter.getTotalPriceMin()));

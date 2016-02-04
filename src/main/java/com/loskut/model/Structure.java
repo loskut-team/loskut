@@ -12,7 +12,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="structure")
-public class Structure {
+public class Structure implements java.io.Serializable {
 
 
     @Id
@@ -29,7 +29,7 @@ public class Structure {
 
 
     @JoinColumn(name = "id_cloth")
-    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonBackReference
     private Cloth cloth;
 

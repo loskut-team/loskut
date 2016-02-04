@@ -14,7 +14,7 @@ import java.util.Set;
 
 @Entity
 @Table(name="cloth")
-public class Cloth {
+public class Cloth implements java.io.Serializable {
 
     @Id
     @Column(name = "id")
@@ -33,7 +33,7 @@ public class Cloth {
     }
 
     @JoinColumn(name = "id_order")
-    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonBackReference
     private Order order;
 
@@ -51,19 +51,19 @@ public class Cloth {
     @Column(name = "total_price")
     private BigDecimal totalPrice;
 
-    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @OneToMany (fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "cloth")
     @JsonManagedReference
     private Set<Color> colors;
 
-    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @OneToMany (fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "cloth")
     @JsonManagedReference
     private Set<Structure> structures;
 
-    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @OneToMany (fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "cloth")
     @JsonManagedReference
     private Set<Feature> features;
 
-    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @OneToMany (fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "cloth")
     @JsonManagedReference
     private Set<ClothType> tupes;
 
@@ -161,6 +161,25 @@ public class Cloth {
 
     public void setTotalPrice(BigDecimal totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    @Override
+    public String toString() {
+        System.out.println();
+        return "Cloth{" +
+                "id=" + id +
+                ", sku='" + sku + '\'' +
+                ", src='" + src + '\'' +
+                ", order=" + order.getId() +
+                ", pricePerMeter=" + pricePerMeter +
+                ", length=" + length +
+                ", width=" + width +
+                ", totalPrice=" + totalPrice +
+                ", colors=" + colors +
+                ", structures=" + structures +
+                ", features=" + features +
+                ", tupes=" + tupes +
+                '}';
     }
 }
 
