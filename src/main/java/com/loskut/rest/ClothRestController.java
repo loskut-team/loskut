@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.transaction.Transactional;
+
 /**
  * Created by Optical Illusion on 19.01.2016.
  */
@@ -34,16 +36,27 @@ public class ClothRestController {
         return new ResponseEntity<>(clothEntityPage, HttpStatus.OK);
     }
 
+    @Transactional
     @RequestMapping(value = "/cloth/read/all", method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<EntityPage<Cloth>> listAll() {
-        EntityPage<Cloth> clothEntityPage = clothService.listAllWithFilter(new ClothFilter());
+        ClothFilter clothFilter = new ClothFilter();
+        clothFilter.setMaxResults(10);
+        EntityPage<Cloth> clothEntityPage = clothService.listAllWithFilter(clothFilter);
         System.out.println("result: "+clothEntityPage);
         if (clothEntityPage.getEntities().isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<>(clothEntityPage, HttpStatus.OK);
+
+        ResponseEntity result = null;
+        try {
+            result = new ResponseEntity<>(clothEntityPage, HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return result;
     }
 
 }

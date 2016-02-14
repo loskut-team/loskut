@@ -15,7 +15,7 @@ import java.util.Set;
 
 @Entity
 @Table(name="users")
-public class User {
+public class User implements java.io.Serializable {
 
     @Id
     @Column(name = "id")
@@ -56,11 +56,11 @@ public class User {
     @Column(name = "balance")
     private BigDecimal balance;
 
-    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToMany (fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user")
     @JsonManagedReference
     private Set<Order> orders;
 
-    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToMany (fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user")
     @JsonManagedReference
     private Set<Payment> payments;
 

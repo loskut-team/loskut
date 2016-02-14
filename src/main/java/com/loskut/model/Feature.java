@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="features")
-public class Feature {
+public class Feature implements java.io.Serializable {
 
     @Id
     @Column(name = "id")
@@ -26,7 +26,7 @@ public class Feature {
 
 
     @JoinColumn(name = "id_cloth")
-    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonBackReference
     private Cloth cloth;
 

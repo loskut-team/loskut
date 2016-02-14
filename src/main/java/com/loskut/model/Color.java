@@ -10,7 +10,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="colors")
-public class Color {
+public class Color implements java.io.Serializable {
 
 
     @Id
@@ -32,7 +32,7 @@ public class Color {
     }
 
     @JoinColumn(name = "id_cloth")
-    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonBackReference
     private Cloth cloth;
 

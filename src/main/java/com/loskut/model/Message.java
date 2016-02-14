@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Entity
 @Table(name="messages")
-public class Message {
+public class Message implements java.io.Serializable  {
 
     @Id
     @Column(name = "id")

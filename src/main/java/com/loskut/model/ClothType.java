@@ -11,7 +11,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="cloth_type")
-public class ClothType {
+public class ClothType implements java.io.Serializable {
 
     @Id
     @Column(name = "id")
@@ -28,7 +28,7 @@ public class ClothType {
 
 
     @JoinColumn(name = "id_cloth")
-    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonBackReference
     private Cloth cloth;
 

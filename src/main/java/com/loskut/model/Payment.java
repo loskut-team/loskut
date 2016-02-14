@@ -12,7 +12,7 @@ import java.util.Date;
 
 @Entity
 @Table(name="payments")
-public class Payment {
+public class Payment implements java.io.Serializable {
 
     @Id
     @Column(name = "id")
@@ -24,7 +24,7 @@ public class Payment {
     private int id;
 
     @JoinColumn(name = "id_user")
-    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonManagedReference
     private User user;
 
