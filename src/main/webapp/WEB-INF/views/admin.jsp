@@ -49,7 +49,7 @@
                                 <thead>
                                 <tr>
                                     <th>Фото</th>
-                                    <th>Id</th>
+                                    <th>Арт.</th>
                                     <th>Ширина</th>
                                     <th>Длина</th>
                                     <th>Ц. 1 м</th>
@@ -96,18 +96,42 @@
                         aria-hidden="true">&times;</span>
                 </button>
                 <h4 class="modal-title" id="mModalLabel">
-                    Редактов</h4>
+                    Редактор</h4>
             </div>
 
-            <div class="col-xs-4">
-                <br>
-                <input id="newLogin" type="text"
-                       class="form-control"
-                       placeholder="Артикул">
-                <br>
-                <input id="newPassword" type="text"
-                       class="form-control"
-                       placeholder="Ширина">
+            <div class="col-xs-8">
+
+
+                <div class="form-group">
+                    <label for="modal-sku">Артикул<input id="modal-sku" type="text" class="form-control"
+                                                         placeholder="Артикул"></label>
+                </div>
+
+                <div class="form-group">
+                    <label for="modal-with">Ширина<input id="modal-with" type="text" class="form-control"
+                                                         placeholder="Ширина"></label>
+                </div>
+
+                <div class="form-group">
+                <label for="modal-length">Длина<input id="modal-length" type="text"
+                                                      class="form-control"
+                                                      placeholder="Длина"></label>
+                </div>
+                    <div class="form-group">
+                <label for="modal-price">Цена за 1 м<input id="modal-price" type="text"
+                                                          class="form-control"
+                                                          placeholder="Цена 1 м"></label>
+                    </div>
+                        <div class="form-group">
+                <label for="modal-total-price">Общая стоимость<input id="modal-total-price" type="text"
+                                                                     class="form-control"
+                                                                     placeholder="Общая стоимость"></label>
+                        </div>
+                            <div class="form-group">
+                <label for="modal-img-url">Фото<input id="modal-img-url" type="text"
+                                                      class="form-control"
+                                                      placeholder="Ссылка на фото"></label>
+                            </div>
             </div>
 
 
@@ -126,7 +150,6 @@
     </div>
 </div>
 <!-- Modal -->
-
 
 
 <!-- /.panel -->
@@ -175,6 +198,14 @@
                     $('#userIdBtn').attr("class", "btn btn-danger");
                     $('#editModal').modal('toggle');
 
+                    $('#modal-sku').val(rowData[0].sku);
+                    $('#modal-with').val(rowData[0].width);
+                    $('#modal-length').val(rowData[0].length);
+                    $('#modal-price').val(rowData[0].pricePerMeter);
+                    $('#modal-total-price').val(rowData[0].totalPrice);
+                    $('#modal-img-url').val(rowData[0].src);
+
+
                 })
                 .on('deselect', function (e, dt, type, indexes) {
                     $("input[name='transactionId']").attr("value", "");
@@ -182,8 +213,6 @@
                     $('#userIdBtn').attr("class", "btn btn-danger disabled");
                 });
     });
-
-
 
 
     //    $(document).ready(function () {
