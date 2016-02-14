@@ -28,14 +28,14 @@ public class Order implements java.io.Serializable {
     private int id;
 
     @JoinColumn(name = "id_client")
-    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonBackReference
     private User user;
 
     public Order() {
     }
 
-    @OneToMany (fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "order")
+    @OneToMany (fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "order")
     @JsonManagedReference
     private Set<Cloth> clothSet;
 

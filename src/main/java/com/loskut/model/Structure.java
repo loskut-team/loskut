@@ -29,7 +29,7 @@ public class Structure implements java.io.Serializable {
 
 
     @JoinColumn(name = "id_cloth")
-    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonBackReference
     private Cloth cloth;
 

@@ -24,7 +24,7 @@ public class Payment implements java.io.Serializable {
     private int id;
 
     @JoinColumn(name = "id_user")
-    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonManagedReference
     private User user;
 

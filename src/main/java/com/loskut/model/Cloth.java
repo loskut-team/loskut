@@ -33,7 +33,7 @@ public class Cloth implements java.io.Serializable {
     }
 
     @JoinColumn(name = "id_order")
-    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonBackReference
     private Order order;
 
@@ -51,19 +51,19 @@ public class Cloth implements java.io.Serializable {
     @Column(name = "total_price")
     private BigDecimal totalPrice;
 
-    @OneToMany (fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @OneToMany (fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
     @JsonManagedReference
     private Set<Color> colors;
 
-    @OneToMany (fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @OneToMany (fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
     @JsonManagedReference
     private Set<Structure> structures;
 
-    @OneToMany (fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @OneToMany (fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
     @JsonManagedReference
     private Set<Feature> features;
 
-    @OneToMany (fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @OneToMany (fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
     @JsonManagedReference
     private Set<ClothType> tupes;
 

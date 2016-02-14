@@ -56,11 +56,11 @@ public class User implements java.io.Serializable {
     @Column(name = "balance")
     private BigDecimal balance;
 
-    @OneToMany (fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToMany (fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "user")
     @JsonManagedReference
     private Set<Order> orders;
 
-    @OneToMany (fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToMany (fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "user")
     @JsonManagedReference
     private Set<Payment> payments;
 
