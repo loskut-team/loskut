@@ -22,8 +22,6 @@ import javax.transaction.Transactional;
 @RestController
 public class ClothRestController {
 
-
-
     @Autowired
     private ClothService clothService;
 
