@@ -35,7 +35,7 @@ public abstract class AbstractDao<PK extends Serializable, T> implements Generic
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<T> listAll(){
-		Criteria criteria = createEntityCriteria();
+		Criteria criteria = createEntityCriteria().setCacheable(false);
 		return (List<T>) criteria.list();
 	}
 

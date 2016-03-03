@@ -16,7 +16,7 @@ import java.util.Set;
 
 @Entity
 @Table(name="orders")
-public class Order implements java.io.Serializable {
+public class Order {
 
     @Id
     @Column(name = "id")
@@ -27,15 +27,10 @@ public class Order implements java.io.Serializable {
             generator="auto_id_order")
     private int id;
 
-    @JoinColumn(name = "id_client")
-    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
-    @JsonBackReference
-    private User user;
-
     public Order() {
     }
 
-    @OneToMany (fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "order")
+    @OneToMany (fetch=FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonManagedReference
     private Set<Cloth> clothSet;
 
@@ -46,6 +41,7 @@ public class Order implements java.io.Serializable {
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
+
     public int getId() {
         return id;
     }
@@ -54,13 +50,6 @@ public class Order implements java.io.Serializable {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public Set<Cloth> getClothSet() {
         return clothSet;
@@ -90,7 +79,6 @@ public class Order implements java.io.Serializable {
     public String toString() {
         return "Order{" +
                 "id=" + id +
-                ", user=" + user +
                 ", clothSet=" + clothSet +
                 ", totalPrice=" + totalPrice +
                 ", status=" + status +

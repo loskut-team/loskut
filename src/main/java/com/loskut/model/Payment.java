@@ -12,7 +12,7 @@ import java.util.Date;
 
 @Entity
 @Table(name="payments")
-public class Payment implements java.io.Serializable {
+public class Payment {
 
     @Id
     @Column(name = "id")
@@ -23,10 +23,6 @@ public class Payment implements java.io.Serializable {
             generator="auto_id_payment")
     private int id;
 
-    @JoinColumn(name = "id_user")
-    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
-    @JsonManagedReference
-    private User user;
 
     private BigDecimal amount;
 
@@ -41,5 +37,17 @@ public class Payment implements java.io.Serializable {
     private Date date;
 
     public Payment() {
+    }
+
+    @Override
+    public String toString() {
+        return "Payment{" +
+                "id=" + id +
+                ", amount=" + amount +
+                ", comment='" + comment + '\'' +
+                ", status='" + status + '\'' +
+                ", orderId=" + orderId +
+                ", date=" + date +
+                '}';
     }
 }

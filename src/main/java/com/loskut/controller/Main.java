@@ -22,6 +22,7 @@ public class Main {
     @RequestMapping(value = {"/","/index"})
        public String main(ModelMap model) {
         List<User> users = userService.listAll();
+        System.out.println("users: "+users);
         model.addAttribute("users", users);
         return "index";
     }

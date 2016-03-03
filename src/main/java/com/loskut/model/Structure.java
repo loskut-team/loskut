@@ -12,7 +12,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="structure")
-public class Structure implements java.io.Serializable {
+public class Structure {
 
 
     @Id
@@ -28,12 +28,17 @@ public class Structure implements java.io.Serializable {
     private Fabric fabric;
 
 
-    @JoinColumn(name = "id_cloth")
-    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
-    @JsonBackReference
-    private Cloth cloth;
+
 
     public Structure() {
+    }
+
+    @Override
+    public String toString() {
+        return "Structure{" +
+                "id=" + id +
+                ", fabric=" + fabric +
+                '}';
     }
 
     public int getId() {
@@ -52,11 +57,4 @@ public class Structure implements java.io.Serializable {
         this.fabric = fabric;
     }
 
-    public Cloth getCloth() {
-        return cloth;
-    }
-
-    public void setCloth(Cloth cloth) {
-        this.cloth = cloth;
-    }
 }

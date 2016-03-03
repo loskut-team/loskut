@@ -23,31 +23,40 @@ import java.util.List;
 @Controller
 public class AdminController {
 
-    @Autowired
-    private UserService userService;
+//    @Autowired
+//    private UserService userService;
 
     @Autowired
     private ClothService clothService;
 
+//    @Autowired
+//    private OrderService orderService;
 
-    @Autowired
-    private OrderService orderService;
-
-    @RequestMapping("/admin")
-    public String main(ModelMap model) throws JsonProcessingException {
+    @RequestMapping("/admin-cloth")
+    public String getClothPage(ModelMap model) throws JsonProcessingException {
 
         List<Cloth> clothList = clothService.listAll();
         ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
         String json = ow.writeValueAsString(clothList);
-
-
 //        String json = gson.toJson(clothList);
-
-
-
         model.addAttribute("clothList", json);
-        return "admin";
+        return "admin/admin-cloth";
     }
+
+
+    @RequestMapping("/admin-customers")
+    public String getCustomersPage(ModelMap model) throws JsonProcessingException {
+
+//        List<Cloth> clothList = clothService.listAll();
+//        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+//        String json = ow.writeValueAsString(clothList);
+////        String json = gson.toJson(clothList);
+//        model.addAttribute("clothList", json);
+        return "admin/admin-customers";
+    }
+
+
+
 
     @RequestMapping("/test")
     public String test() {
