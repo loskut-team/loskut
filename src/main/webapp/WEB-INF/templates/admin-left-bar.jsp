@@ -51,32 +51,18 @@
                             </span>
           </div>
         </li>
-
         <li>
-          <a href="<c:url value="/admin-users" />"><i class="fa fa-dashboard fa-fw"></i>Пользователи</a>
+          <a href="<c:url value="/admin-users" />"><i class="fa fa-dashboard fa-fw"></i>Заказы</a>
         </li>
         <li>
-          <a href="<c:url value="/admin-tenders" />"><i class="fa fa-share fa-fw"></i>Тендеры</a>
-        </li>
-
-        <li>
-          <a href="<c:url value="/admin-projects" />"><i class="fa fa-edit fa-fw"></i>Проекты</a>
+          <a href="<c:url value="/admin-tenders" />"><i class="fa fa-share fa-fw"></i>Ткани</a>
         </li>
         <li>
-          <a href="<c:url value="/admin-blogs" />"><i class="fa fa-edit fa-fw"></i>Блоги</a>
+          <a href="<c:url value="/admin-projects" />"><i class="fa fa-edit fa-fw"></i>Пользователи</a>
         </li>
         <li>
-          <a href="<c:url value="/admin-news" />"><i class="fa fa-edit fa-fw"></i>Новости</a>
+          <a href="<c:url value="/admin-blogs" />"><i class="fa fa-edit fa-fw"></i>Сообщения</a>
         </li>
-        <li>
-          <a href="<c:url value="/admin-admins" />"><i class="fa fa-table fa-fw"></i>Админы</a>
-        </li>
-        <li>
-          <a href="<c:url value="/admin-offers" />"><i class="fa fa-credit-card fa-fw"></i>Объявления</a>
-        </li>
-        <%--<li>--%>
-        <%--<a href="<c:url value="/accountant/internal" />"><i class="fa fa-share fa-fw"></i> Внутренние транзакции</a>--%>
-        <%--</li>--%>
       </ul>
     </div>
   </div>

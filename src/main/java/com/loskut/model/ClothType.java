@@ -11,7 +11,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="cloth_type")
-public class ClothType implements java.io.Serializable {
+public class ClothType {
 
     @Id
     @Column(name = "id")
@@ -27,12 +27,15 @@ public class ClothType implements java.io.Serializable {
     private ClothTypeName clothTypeName;
 
 
-    @JoinColumn(name = "id_cloth")
-    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
-    @JsonBackReference
-    private Cloth cloth;
-
     public ClothType() {
+    }
+
+    @Override
+    public String toString() {
+        return "ClothType{" +
+                "id=" + id +
+                ", clothTypeName=" + clothTypeName +
+                '}';
     }
 
     public int getId() {
@@ -51,11 +54,4 @@ public class ClothType implements java.io.Serializable {
         this.clothTypeName = clothTypeName;
     }
 
-    public Cloth getCloth() {
-        return cloth;
-    }
-
-    public void setCloth(Cloth cloth) {
-        this.cloth = cloth;
-    }
 }

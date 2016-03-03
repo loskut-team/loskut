@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="features")
-public class Feature implements java.io.Serializable {
+public class Feature{
 
     @Id
     @Column(name = "id")
@@ -25,12 +25,15 @@ public class Feature implements java.io.Serializable {
     private FetchType fetchType;
 
 
-    @JoinColumn(name = "id_cloth")
-    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
-    @JsonBackReference
-    private Cloth cloth;
-
     public Feature() {
+    }
+
+    @Override
+    public String toString() {
+        return "Feature{" +
+                "id=" + id +
+                ", fetchType=" + fetchType +
+                '}';
     }
 
     public int getId() {
@@ -50,11 +53,4 @@ public class Feature implements java.io.Serializable {
         this.fetchType = fetchType;
     }
 
-    public Cloth getCloth() {
-        return cloth;
-    }
-
-    public void setCloth(Cloth cloth) {
-        this.cloth = cloth;
-    }
 }

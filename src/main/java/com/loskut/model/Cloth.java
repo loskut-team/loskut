@@ -13,16 +13,16 @@ import java.util.Set;
  */
 
 @Entity
-@Table(name="cloth")
-public class Cloth implements java.io.Serializable {
+@Table(name = "cloth")
+public class Cloth {
 
     @Id
     @Column(name = "id")
-    @SequenceGenerator(name="auto_id_cloth",
-            sequenceName="auto_id_cloth",
-            allocationSize=1)
+    @SequenceGenerator(name = "auto_id_cloth",
+            sequenceName = "auto_id_cloth",
+            allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
-            generator="auto_id_cloth")
+            generator = "auto_id_cloth")
     private int id;
 
     private String sku;
@@ -32,38 +32,34 @@ public class Cloth implements java.io.Serializable {
     public Cloth() {
     }
 
-    @JoinColumn(name = "id_order")
-    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
-    @JsonBackReference
-    private Order order;
 
-    @Digits(integer=8, fraction=2)
+    @Digits(integer = 8, fraction = 2)
     @Column(name = "price_per_meter")
     private BigDecimal pricePerMeter;
 
-    @Digits(integer=8, fraction=2)
+    @Digits(integer = 8, fraction = 2)
     private BigDecimal length;
 
-    @Digits(integer=8, fraction=2)
+    @Digits(integer = 8, fraction = 2)
     private BigDecimal width;
 
-    @Digits(integer=8, fraction=2)
+    @Digits(integer = 8, fraction = 2)
     @Column(name = "total_price")
     private BigDecimal totalPrice;
 
-    @OneToMany (fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonManagedReference
     private Set<Color> colors;
 
-    @OneToMany (fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonManagedReference
     private Set<Structure> structures;
 
-    @OneToMany (fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonManagedReference
     private Set<Feature> features;
 
-    @OneToMany (fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cloth")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonManagedReference
     private Set<ClothType> tupes;
 
@@ -89,14 +85,6 @@ public class Cloth implements java.io.Serializable {
 
     public void setSrc(String src) {
         this.src = src;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
-    }
-
-    public Order getOrder() {
-        return order;
     }
 
     public Set<Color> getColors() {
@@ -170,7 +158,6 @@ public class Cloth implements java.io.Serializable {
                 "id=" + id +
                 ", sku='" + sku + '\'' +
                 ", src='" + src + '\'' +
-                ", order=" + order.getId() +
                 ", pricePerMeter=" + pricePerMeter +
                 ", length=" + length +
                 ", width=" + width +

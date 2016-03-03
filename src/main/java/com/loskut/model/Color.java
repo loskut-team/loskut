@@ -10,7 +10,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="colors")
-public class Color implements java.io.Serializable {
+public class Color{
 
 
     @Id
@@ -31,10 +31,15 @@ public class Color implements java.io.Serializable {
     public Color() {
     }
 
-    @JoinColumn(name = "id_cloth")
-    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
-    @JsonBackReference
-    private Cloth cloth;
+    @Override
+    public String toString() {
+        return "Color{" +
+                "id=" + id +
+                ", red=" + red +
+                ", green=" + green +
+                ", blue=" + blue +
+                '}';
+    }
 
     public int getId() {
         return id;
@@ -68,11 +73,4 @@ public class Color implements java.io.Serializable {
         this.blue = blue;
     }
 
-    public Cloth getCloth() {
-        return cloth;
-    }
-
-    public void setCloth(Cloth cloth) {
-        this.cloth = cloth;
-    }
 }
