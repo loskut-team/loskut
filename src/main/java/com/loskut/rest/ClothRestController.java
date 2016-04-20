@@ -27,6 +27,7 @@ public class ClothRestController {
 
     @RequestMapping(value = "/cloth/read/filtered", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<EntityPage<Cloth>> listFiltered(@RequestBody ClothFilter clothFilter) {
+        System.out.println("/cloth/read/filtered");
         EntityPage<Cloth> clothEntityPage = clothService.listAllWithFilter(clothFilter);
         if (clothEntityPage.getEntities().isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -34,27 +35,21 @@ public class ClothRestController {
         return new ResponseEntity<>(clothEntityPage, HttpStatus.OK);
     }
 
-    @Transactional
-    @RequestMapping(value = "/cloth/read/all", method = RequestMethod.POST,
+
+    @RequestMapping(value = "/cloth/read/all", method = RequestMethod.GET,
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<EntityPage<Cloth>> listAll() {
+        System.out.println("/cloth/read/all");
         ClothFilter clothFilter = new ClothFilter();
         clothFilter.setMaxResults(10);
-        EntityPage<Cloth> clothEntityPage = clothService.listAllWithFilter(clothFilter);
+        EntityPage<Cloth> clothEntityPage = new EntityPage<>();
+        clothEntityPage.setEntities(clothService.listAll());
         System.out.println("result: "+clothEntityPage);
         if (clothEntityPage.getEntities().isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-
-        ResponseEntity result = null;
-        try {
-            result = new ResponseEntity<>(clothEntityPage, HttpStatus.OK);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return result;
+        return new ResponseEntity<>(clothEntityPage, HttpStatus.OK);
     }
 
 }

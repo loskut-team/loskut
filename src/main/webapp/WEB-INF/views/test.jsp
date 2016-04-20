@@ -120,10 +120,9 @@
 
 
        $.ajax({
-           type: "POST",
+           type: "GET",
            url: "/cloth/read/all",
            contentType: "application/json; charset=utf-8",
-           dataType: "json",
            success: function (data) {
              content = content.concat(data.entities);
                var gallery = $('#gallery');
