@@ -31,6 +31,11 @@ public class StructureServiceImpl implements StructureService {
     }
 
     @Override
+    public void update(Structure entity) {
+        dao.update(entity);
+    }
+
+    @Override
     public void delete(Structure entity) {
         dao.delete(entity);
     }

@@ -12,6 +12,8 @@ public interface GenericService<PK extends Serializable, T> {
 
     void save(T entity);
 
+    void update(T entity);
+
     void  delete(T entity);
 
     List<T> listAll();

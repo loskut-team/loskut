@@ -31,6 +31,11 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
+    public void update(Payment entity) {
+        dao.update(entity);
+    }
+
+    @Override
     public void delete(Payment entity) {
         dao.delete(entity);
     }

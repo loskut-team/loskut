@@ -31,6 +31,9 @@ public class FeatureServiceImpl implements FeatureService {
     }
 
     @Override
+    public void update(Feature entity){dao.update(entity);}
+
+    @Override
     public void delete(Feature entity) {
         dao.delete(entity);
     }

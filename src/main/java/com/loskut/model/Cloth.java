@@ -29,8 +29,6 @@ public class Cloth {
 
     private String src;
 
-    public Cloth() {
-    }
 
 
     @Digits(integer = 8, fraction = 2)
@@ -48,20 +46,19 @@ public class Cloth {
     private BigDecimal totalPrice;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JsonManagedReference
     private Set<Color> colors;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JsonManagedReference
     private Set<Structure> structures;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JsonManagedReference
     private Set<Feature> features;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JsonManagedReference
     private Set<ClothType> tupes;
+
+    public Cloth() {
+    }
 
     public int getId() {
         return id;

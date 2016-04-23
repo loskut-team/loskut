@@ -20,12 +20,13 @@ import javax.transaction.Transactional;
  */
 
 @RestController
+@RequestMapping("/cloth")
 public class ClothRestController {
 
     @Autowired
     private ClothService clothService;
 
-    @RequestMapping(value = "/cloth/read/filtered", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/read/filtered", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<EntityPage<Cloth>> listFiltered(@RequestBody ClothFilter clothFilter) {
         System.out.println("/cloth/read/filtered");
         EntityPage<Cloth> clothEntityPage = clothService.listAllWithFilter(clothFilter);
@@ -36,7 +37,7 @@ public class ClothRestController {
     }
 
 
-    @RequestMapping(value = "/cloth/read/all", method = RequestMethod.GET,
+    @RequestMapping(value = "/read/all", method = RequestMethod.GET,
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<EntityPage<Cloth>> listAll() {
@@ -45,11 +46,21 @@ public class ClothRestController {
         clothFilter.setMaxResults(10);
         EntityPage<Cloth> clothEntityPage = new EntityPage<>();
         clothEntityPage.setEntities(clothService.listAll());
-        System.out.println("result: "+clothEntityPage);
+        System.out.println("result: " + clothEntityPage);
         if (clothEntityPage.getEntities().isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(clothEntityPage, HttpStatus.OK);
+    }
+
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Void> updateCloth(@RequestBody Cloth cloth) {
+
+
+        clothService.update(cloth);
+
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }

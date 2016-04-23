@@ -31,6 +31,9 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public void update(Order entity) {dao.update(entity);}
+
+    @Override
     public void delete(Order entity) {
         dao.delete(entity);
     }

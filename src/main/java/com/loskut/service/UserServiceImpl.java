@@ -18,7 +18,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private  UserDao dao;
+    private UserDao dao;
 
     @Override
     public User findById(Integer id) {
@@ -28,6 +28,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public void save(User user) {
         dao.save(user);
+    }
+
+    @Override
+    public void update(User user) {
+        dao.update(user);
     }
 
     @Override

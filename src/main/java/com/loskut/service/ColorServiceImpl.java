@@ -31,6 +31,9 @@ public class ColorServiceImpl implements ColorService {
     }
 
     @Override
+    public void update(Color entity){dao.update(entity);}
+
+    @Override
     public void delete(Color entity) {
         dao.delete(entity);
     }

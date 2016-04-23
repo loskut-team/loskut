@@ -31,6 +31,11 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
+    public void update(Message entity) {
+        dao.update(entity);
+    }
+
+    @Override
     public void delete(Message entity) {
         dao.delete(entity);
     }

@@ -31,6 +31,9 @@ public class ClothTypeServiceImpl implements ClothTypeService {
     }
 
     @Override
+    public void update(ClothType entity){dao.update(entity);}
+
+    @Override
     public void delete(ClothType entity) {
         dao.delete(entity);
     }
