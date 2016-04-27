@@ -151,15 +151,13 @@
 </div>
 <!-- Modal -->
 
-
 <!-- /.panel -->
 <!-- Admin bottom links -->
 <jsp:include page="/WEB-INF/templates/admin-links-bottom.jsp"/>
 <!-- /Admin bottom links -->
-<script src="/resources/js/admin/admin-cloth.js"></script>
-
 <script>
-    var data = ${clothList};
+    var data = ${clothList}
 </script>
+<script src="/resources/js/admin/admin-cloth.js"></script>
 </body>
 </html>

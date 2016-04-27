@@ -48,6 +48,9 @@ public class Cloth {
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Color> colors;
 
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Color mainColor;
+
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Structure> structures;
 
@@ -146,6 +149,14 @@ public class Cloth {
 
     public void setTotalPrice(BigDecimal totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public Color getMainColor() {
+        return mainColor;
+    }
+
+    public void setMainColor(Color mainColor) {
+        this.mainColor = mainColor;
     }
 
     @Override

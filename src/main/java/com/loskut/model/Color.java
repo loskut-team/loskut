@@ -1,8 +1,9 @@
 package com.loskut.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 import javax.persistence.*;
+import org.hibernate.annotations.Index;
 
 /**
  * Created by RAYANT on 15.01.2016.
@@ -10,16 +11,23 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="colors")
-public class Color{
+@org.hibernate.annotations.Table(appliesTo = "colors",
+        indexes = {
+                @Index(name = "rgb",
+                        columnNames = {"red", "green","blue"}
+                )
+        }
+)
+public class Color {
 
 
     @Id
     @Column(name = "id")
-    @SequenceGenerator(name="auto_id_color",
-            sequenceName="auto_id_color",
-            allocationSize=1)
+    @SequenceGenerator(name = "auto_id_color",
+            sequenceName = "auto_id_color",
+            allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
-            generator="auto_id_color")
+            generator = "auto_id_color")
     private int id;
 
     private int red;
