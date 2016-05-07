@@ -66,6 +66,8 @@ $('#update-cloth').on('click', function () {
     cloth.length = $('#modal-length').val();
     cloth.width = $('#modal-with').val();
     cloth.totalPrice = $('#modal-total-price').val();
+    cloth.mainColor = mainColor;
+    cloth.colors = colors;
     updateCloth();
 
 });

@@ -27,9 +27,8 @@ public class Cloth {
 
     private String sku;
 
+    @Column(columnDefinition = "varchar(750)")
     private String src;
-
-
 
     @Digits(integer = 8, fraction = 2)
     @Column(name = "price_per_meter")

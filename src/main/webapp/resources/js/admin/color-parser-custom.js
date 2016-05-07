@@ -1,5 +1,8 @@
 var img = new Image();
 
+var mainColor = {};
+var colors = [];
+
 $('#btn').on('click', function () {
     var src = $('#modal-img-url').val();
     $('#preview-img').attr('src', src);
@@ -10,15 +13,13 @@ $('#btn').on('click', function () {
 
     img.onload = function () {
 
-        var mainColor = {};
-
         var colorThief = new ColorThief();
         var result = colorThief.getColor(img);
-        mainColor.r = result[0];
-        mainColor.g = result[1];
-        mainColor.b = result[2];
+        mainColor.red = result[0];
+        mainColor.green = result[1];
+        mainColor.blue = result[2];
 
-        $('#main-color').css('background-color', 'rgb(' + mainColor.r + ',' + mainColor.g + ',' + mainColor.b + ')');
+        $('#main-color').css('background-color', 'rgb(' + mainColor.red + ',' + mainColor.green + ',' + mainColor.blue + ')');
 
         var additionalColorAmount = 5;
 
@@ -28,7 +29,13 @@ $('#btn').on('click', function () {
 
         function paletteParse(additionalPalette) {
             for (var i in additionalPalette) {
-                $('#palette').append("<div style='width: 50px; height: 50px; background-color: rgb(" + additionalPalette[i][0] + ", " + additionalPalette[i][1] + ", " + additionalPalette[i][2] + ");'>asdasd</div>")
+
+                var color = {};
+                color.red = additionalPalette[i][0];
+                color.green = additionalPalette[i][1];
+                color.blue = additionalPalette[i][2];
+                colors.push(color);
+                $('#palette').append("<div style='width: 50px; height: 50px; background-color: rgb(" + additionalPalette[i][0] + ", " + additionalPalette[i][1] + ", " + additionalPalette[i][2] + ");'></div>")
             }
         }
 
