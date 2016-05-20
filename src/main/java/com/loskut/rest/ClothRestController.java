@@ -38,7 +38,6 @@ public class ClothRestController {
 
 
     @RequestMapping(value = "/read/all", method = RequestMethod.GET,
-            consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<EntityPage<Cloth>> listAll() {
         System.out.println("/cloth/read/all");

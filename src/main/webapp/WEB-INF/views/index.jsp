@@ -1,320 +1,342 @@
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: RAYANT
-  Date: 12.01.2016
-  Time: 15:23
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="en">
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
+<!DOCTYPE html>
+<html lang="ru">
 <head>
+    <meta charset="utf-8">
+    <jsp:include page="/WEB-INF/templates/title.jsp"/>
+    <jsp:include page="/WEB-INF/templates/srcLinks.jsp"/>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <script type="text/javascript" src="/resources/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+    <script type="text/javascript" src="/resources/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
 
-  <title>Modern Business - Start Bootstrap Template</title>
+    <style type="text/css">body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
 
-  <!-- Bootstrap Core CSS -->
-  <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+    .sidebar-nav {
+        padding: 9px 0;
+    }</style>
 
-  <!-- Custom CSS -->
-  <link href="/resources/css/modern-business.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-  <!-- Custom Fonts -->
-  <link href="/resources/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="/resources/assets/ico/favicon.png">
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
+    <link type="text/css" rel="stylesheet" href="/resources/css/slider.css">
+    <script src="/resources/js/bootstrap-slider.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" type="text/css" href="/resources/fancybox/jquery.fancybox-1.3.4.css" media="screen"/>
 
 </head>
-
 <body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#">Loskut</a>
 
-<!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">Start Bootstrap</a>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a href="/about">About</a>
-        </li>
-        <li>
-          <a href="/services">Services</a>
-        </li>
-        <li>
-          <a href="/contact">Contact</a>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li>
-              <a href="/portfolio-1-col">1 Column Portfolio</a>
-            </li>
-            <li>
-              <a href="/portfolio-2-col">2 Column Portfolio</a>
-            </li>
-            <li>
-              <a href="/portfolio-3-col">3 Column Portfolio</a>
-            </li>
-            <li>
-              <a href="/portfolio-4-col">4 Column Portfolio</a>
-            </li>
-            <li>
-              <a href="/portfolio-item">Single Portfolio Item</a>
-            </li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li>
-              <a href="/blog-home-1">Blog Home 1</a>
-            </li>
-            <li>
-              <a href="/blog-home-2">Blog Home 2</a>
-            </li>
-            <li>
-              <a href="/blog-post">Blog Post</a>
-            </li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li>
-              <a href="/full-width">Full Width Page</a>
-            </li>
-            <li>
-              <a href="/sidebar">Sidebar Page</a>
-            </li>
-            <li>
-              <a href="/faq">FAQ</a>
-            </li>
-            <li>
-              <a href="/404">404</a>
-            </li>
-            <li>
-              <a href="/pricing">Pricing Table</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <!-- /.navbar-collapse -->
-  </div>
-  <!-- /.container -->
-</nav>
+            <div class="nav-collapse collapse">
 
-<!-- Header Carousel -->
-<header id="myCarousel" class="carousel slide">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
+                <sec:authorize access="!isAuthenticated()">
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
-      <div class="carousel-caption">
-        <h2>Caption 1</h2>
-      </div>
-    </div>
-    <div class="item">
-      <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
-      <div class="carousel-caption">
-        <h2>Caption 2</h2>
-      </div>
-    </div>
-    <div class="item">
-      <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
-      <div class="carousel-caption">
-        <h2>Caption 3</h2>
-      </div>
-    </div>
-  </div>
+                    <p class="navbar-text pull-right">
+                        Вы вошли как: <a href="#" class="navbar-link">Гость</a>
+                    </p>
 
-  <!-- Controls -->
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="icon-prev"></span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="icon-next"></span>
-  </a>
-</header>
+                    <ul class="nav">
+                        <li class="active">
 
-<!-- Page Content -->
-<div class="container">
+                            <a href="#modal-1" role="button" data-toggle="modal" data-target="#modal-1">Войти</a>
 
-  <!-- Marketing Icons Section -->
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">
-        Welcome to Modern Business
-      </h1>
-    </div>
-    <div class="col-md-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.2.0</h4>
+                        </li>
+                        <li><a href="#modal-2" role="button" data-toggle="modal" data-target="#modal-2">Зарегистрироваться</a>
+                        </li>
+                        <li><a href="#modal-2" role="button" data-toggle="modal" data-target="#modal-3">Восстановить
+                            пароль</a></li>
+                    </ul>
+
+                </sec:authorize>
+
+                <sec:authorize access="isAuthenticated()">
+
+                    <p class="navbar-text pull-right">
+                        Вы вошли как: <a href="#" class="navbar-link">
+                        <sec:authentication property="principal.username"/>
+                    </a> Ваш баланс: <a href="#" class="navbar-link">${user.balance/100}&nbsp;грн.</a>
+                    </p>
+                    <ul class="nav">
+                        <li>
+                            <sec:authorize url="/admin">
+                                <a href="<c:url value="/admin" />">Панель администратора</a>
+                            </sec:authorize>
+                            <sec:authorize url="/account">
+                                <a href="<c:url value="/account" />">Личный кабинет</a>
+                            </sec:authorize>
+                        </li>
+                        <li><a href="<c:url value="/logout" />">Выйти</a></li>
+                    </ul>
+
+                </sec:authorize>
+            </div>
         </div>
-        <div class="panel-body">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-          <a href="#" class="btn btn-default">Learn More</a>
-        </div>
-      </div>
     </div>
-    <div class="col-md-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4><i class="fa fa-fw fa-gift"></i> Free &amp; Open Source</h4>
-        </div>
-        <div class="panel-body">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-          <a href="#" class="btn btn-default">Learn More</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4><i class="fa fa-fw fa-compass"></i> Easy to Use</h4>
-        </div>
-        <div class="panel-body">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-          <a href="#" class="btn btn-default">Learn More</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- /.row -->
-
-  <!-- Portfolio Section -->
-  <div class="row">
-    <div class="col-lg-12">
-      <h2 class="page-header">Portfolio Heading</h2>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <a href="/portfolio-item">
-        <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-      </a>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <a href="/portfolio-item">
-        <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-      </a>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <a href="/portfolio-item">
-        <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-      </a>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <a href="/portfolio-item">
-        <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-      </a>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <a href="/portfolio-item">
-        <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-      </a>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <a href="/portfolio-item">
-        <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-      </a>
-    </div>
-  </div>
-  <!-- /.row -->
-
-  <!-- Features Section -->
-  <div class="row">
-    <div class="col-lg-12">
-      <h2 class="page-header">Modern Business Features</h2>
-    </div>
-    <div class="col-md-6">
-      <p>The Modern Business template by Start Bootstrap includes:</p>
-      <ul>
-        <li><strong>Bootstrap v3.2.0</strong>
-        </li>
-        <li>jQuery v1.11.0</li>
-        <li>Font Awesome v4.1.0</li>
-        <li>Working PHP contact form with validation</li>
-        <li>Unstyled page elements for easy customization</li>
-        <li>17 HTML pages</li>
-      </ul>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-    </div>
-    <div class="col-md-6">
-      <img class="img-responsive" src="http://placehold.it/700x450" alt="">
-    </div>
-  </div>
-  <!-- /.row -->
-
-  <hr>
-
-  <!-- Call to Action Section -->
-  <div class="well">
-    <div class="row">
-      <div class="col-md-8">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
-      </div>
-      <div class="col-md-4">
-        <a class="btn btn-lg btn-default btn-block" href="#">Call to Action</a>
-      </div>
-    </div>
-  </div>
-
-  <hr>
-
-  <!-- Footer -->
-  <footer>
-    <div class="row">
-      <div class="col-lg-12">
-        <p>Copyright &copy; Your Website 2014</p>
-      </div>
-    </div>
-  </footer>
-
 </div>
-<!-- /.container -->
 
-<!-- jQuery -->
-<script src="/resources/js/jquery.js"></script>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3">
+            <tiles:insertAttribute name="leftMenu"/>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="/resources/js/bootstrap.min.js"></script>
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="well sidebar-nav">
+                        <div class="checkbox" style="padding-left: 25px;">
+                            <form action="/" method="get">
+                                <label>
+                                    <input type="checkbox" name="listParams" value="0">
+                                    Трикотаж
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="listParams" value="1">
+                                    Хлопок
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="listParams" value="2">
+                                    Шерсть
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="listParams" value="3">
+                                    Джинс
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="listParams" value="4">
+                                    Шёлк
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="listParams" value="5">
+                                    Подклады
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="listParams" value="6">
+                                    Вискоза
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="listParams" value="7">
+                                    Мебельные ткани
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="listParams" value="8">
+                                    Шторные
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="listParams" value="9">
+                                    Кожа
+                                </label>
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">Фильтр</button>
+                            </form>
 
-<!-- Script to Activate the Carousel -->
-<script>
-  $('.carousel').carousel({
-    interval: 5000 //changes the speed
-  })
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="span9" id="gallery">
+        </div>
+    </div>
+
+    <tiles:insertAttribute name="footer"/>
+
+    <hr>
+    <footer>
+        <p>&copy; Ray Anton & Kobylyatskiy Alexander</p>
+    </footer>
+</div>
+
+<script type="text/javascript">
+    var $= jQuery.noConflict();
+    $.ajax({
+        type: "GET",
+        url: "/cloth/read/all",
+        cache: false,
+        success: function (response) {
+            for (var cloth in response.entities) {
+                $('#gallery').append('<ul style="display: inline-table"> <li><a rel="example_group" href="https://lh3.googleusercontent.com/-JPgl-bMpE2E/Vebz4l91hkI/AAAAAAAAC0Y/biDa58DTgoY/s720-Ic42/Resize%252520of%252520IMG_3996.JPG" title="Артикул: 1035&nbsp;&nbsp;&nbsp;&nbsp;Мебельная голубая&nbsp;&nbsp;&nbsp;&nbsp;Ширина: 1.3&nbsp;м&nbsp;&nbsp;&nbsp;&nbsp;Длина: 6.0&nbsp;м&nbsp;&nbsp;&nbsp;&nbsp;Цена за 1 м: 50 грн.&nbsp;&nbsp;&nbsp;&nbsp;Общая цена: 250.0 грн."> <img alt="" src="https://lh3.googleusercontent.com/-JPgl-bMpE2E/Vebz4l91hkI/AAAAAAAAC0Y/biDa58DTgoY/s720-Ic42/Resize%252520of%252520IMG_3996.JPG"> </a> </li> </ul>')
+
+            }
+            $('a[rel=example_group]').fancybox({
+                'transitionIn': 'none',
+                'transitionOut': 'none',
+                'titlePosition': 'over',
+                'titleFormat': function (title) {
+
+                    return '<span id="fancybox-title-over">' + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+                }
+            })
+        }
+
+    });
+//    $(document).ready(function () {
+//
+//        $("a[rel=example_group]").fancybox({
+//            'transitionIn': 'none',
+//            'transitionOut': 'none',
+//            'titlePosition': 'over',
+//            'titleFormat': function (title) {
+//
+//                return '<span id="fancybox-title-over">' + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+//            }
+//        })
+//    });
 </script>
 
+<script type="text/javascript">
+
+    function responseFio() {
+
+        $.ajax({
+            type: "POST",
+            url: "/registration/ajaxCheckUnique",
+            data: document.reg.j_username.value,
+            cache: false,
+            success: function (response) {
+                if (response == 'off') {
+                    $("#responseFioSpan").text("Имя занято").css("color", "red");
+                    document.reg.releFio.value = 'on';
+                } else {
+                    $("#responseFioSpan").text("Имя свободно").css("color", "green");
+                    document.reg.releFio.value = 'off';
+                }
+                ;
+            }
+        });
+    }
+    ;
+
+    function responseEmail() {
+
+        $.ajax({
+            type: "POST",
+            url: "/registration/ajaxCheckUnique",
+            data: document.reg.j_email.value,
+            cache: false,
+            success: function (response) {
+                if (response == 'off') {
+                    $("#responseEmailSpan").text("E-mail занят").css("color", "red");
+                    document.reg.releEmail.value = 'on';
+                } else {
+                    $("#responseEmailSpan").text("E-mail свободен").css("color", "green");
+                    document.reg.releEmail.value = 'off';
+                }
+                ;
+            }
+        });
+    }
+    ;
+</script>
+<tiles:insertAttribute name="metrika"/>
 </body>
 
+<div class="modal fade" id="modal-1" style="width: 270px; top: 20%; left: 60%; display: none;">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title" style="margin-left: 15%;">Авторизация</h3>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="width: 200px;">
+                    <c:url value="/j_spring_security_check" var="loginUrl"/>
+                    <form action="${loginUrl}" method="post">
+                        <h2 class="form-signin-heading"></h2>
+                        <input type="text" class="form-control" name="j_username" placeholder="Login"
+                               style="width: 185px;">
+                        <input type="password" class="form-control" name="j_password" placeholder="Password"
+                               style="width: 185px;">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+                        <a class="btn btn-lg btn-primary btn-block" href="<c:url value="/restore" />">Восстановить
+                            пароль</a>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="btn btn-default" data-dismiss="modal">Отмена</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-2" style="width: 450px; top: 20%; left: 60%; display: none;">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title" style="margin-left: 15%;">Зарегистрируйтесь</h3>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="width: 400px;">
+                    <form name="reg" action="/registration" method="post">
+                        <input name="releFio" type="hidden">
+                        <input name="releEmail" type="hidden">
+                        <input maxlength="32" name="j_username" placeholder="Ваш логин" type="text" style="width:65%;"
+                               onchange="responseFio();">
+                        <span id="responseFioSpan" style="margin-left: 10px;"></span>
+                        <input maxlength="32" name="j_password" placeholder="Ваш пароль" type="text" style="width:65%;">
+                        <input maxlength="64" name="j_email" placeholder="Ваш email" type="text" style="width:65%;"
+                               onchange="responseEmail();">
+                        <span id="responseEmailSpan" style="margin-left: 10px;"></span>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 70%;">Подтвердить
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="btn btn-default" data-dismiss="modal">Отмена</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-3" style="width: 450px; top: 20%; left: 60%; display: none;">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title" style="text-align: center;">Восстановление<br>учетной записи</h3>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="width: 300px;">
+                    <form action="/restore" method="post">
+                        <p>Введите логин или e-mail учетной записи.<br>Новый пароль будет отправлен на e-mail который
+                            был указан при регистрации.</p>
+                        <input type="text" class="form-control" name="j_email" placeholder="Ваш email или логин">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Подтвердить</button>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="btn btn-default" data-dismiss="modal">Отмена</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var slider = new Slider('#sl1', {});
+</script>
+<script>
+    var slider = new Slider('#sl2', {});
+</script>
 </html>

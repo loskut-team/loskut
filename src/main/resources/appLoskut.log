@@ -1,0 +1,451 @@
+2016-05-20 00:27:05.414 INFO  [RMI TCP Connection(3)-127.0.0.1] ContextLoader:285 - Root WebApplicationContext: initialization started
+2016-05-20 00:27:05.435 INFO  [RMI TCP Connection(3)-127.0.0.1] AnnotationConfigWebApplicationContext:513 - Refreshing Root WebApplicationContext: startup date [Fri May 20 00:27:05 EEST 2016]; root of context hierarchy
+2016-05-20 00:27:05.607 INFO  [RMI TCP Connection(3)-127.0.0.1] AnnotationConfigWebApplicationContext:208 - Registering annotated classes: [class com.loskut.configuration.AppConfig,class com.loskut.configuration.SecurityConfig]
+2016-05-20 00:27:09.021 INFO  [RMI TCP Connection(3)-127.0.0.1] DriverManagerDataSource:133 - Loaded JDBC driver: org.postgresql.Driver
+2016-05-20 00:27:09.493 INFO  [RMI TCP Connection(3)-127.0.0.1] Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-05-20 00:27:09.516 INFO  [RMI TCP Connection(3)-127.0.0.1] Version:54 - HHH000412: Hibernate Core {4.3.6.Final}
+2016-05-20 00:27:09.523 INFO  [RMI TCP Connection(3)-127.0.0.1] Environment:239 - HHH000206: hibernate.properties not found
+2016-05-20 00:27:09.529 INFO  [RMI TCP Connection(3)-127.0.0.1] Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-05-20 00:27:50.162 INFO  [RMI TCP Connection(3)-127.0.0.1] Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2016-05-20 00:27:50.212 INFO  [RMI TCP Connection(3)-127.0.0.1] LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-05-20 00:27:50.938 INFO  [RMI TCP Connection(3)-127.0.0.1] TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-05-20 00:27:50.954 INFO  [RMI TCP Connection(3)-127.0.0.1] ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-05-20 00:27:51.144 INFO  [RMI TCP Connection(3)-127.0.0.1] Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+2016-05-20 00:27:52.887 INFO  [RMI TCP Connection(3)-127.0.0.1] SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2016-05-20 00:27:52.889 INFO  [RMI TCP Connection(3)-127.0.0.1] SchemaUpdate:193 - HHH000102: Fetching database metadata
+2016-05-20 00:27:53.372 INFO  [RMI TCP Connection(3)-127.0.0.1] SchemaUpdate:205 - HHH000396: Updating schema
+2016-05-20 00:27:53.705 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.cloth
+2016-05-20 00:27:53.707 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [total_price, src, maincolor_id, length, width, price_per_meter, id, sku]
+2016-05-20 00:27:53.709 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_3rgfsmaexjvpt5py4645lonm6]
+2016-05-20 00:27:53.730 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [cloth_pkey]
+2016-05-20 00:27:53.998 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.cloth_cloth_type
+2016-05-20 00:27:53.999 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [cloth_id, tupes_id]
+2016-05-20 00:27:54.002 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_mx15hguxfi483gjse72jir12i, fk_74q3933owv84pkodjjeherw8p]
+2016-05-20 00:27:54.003 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [cloth_cloth_type_pkey, uk_74q3933owv84pkodjjeherw8p]
+2016-05-20 00:27:54.252 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.cloth_colors
+2016-05-20 00:27:54.253 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [cloth_id, colors_id]
+2016-05-20 00:27:54.254 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_4clkseor5v65qpyqtq87j9mf, fk_gfciad6lnwscp2aq89wntykyp]
+2016-05-20 00:27:54.255 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [cloth_colors_pkey, uk_4clkseor5v65qpyqtq87j9mf]
+2016-05-20 00:27:54.506 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.cloth_features
+2016-05-20 00:27:54.508 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [cloth_id, features_id]
+2016-05-20 00:27:54.509 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_qxwksmbwtub5w7hnyts6dqi4f, fk_rpgfdg3gtw9r24vv4xt4wy6i6]
+2016-05-20 00:27:54.510 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [cloth_features_pkey, uk_rpgfdg3gtw9r24vv4xt4wy6i6]
+2016-05-20 00:27:54.778 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.cloth_structure
+2016-05-20 00:27:54.779 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [cloth_id, structures_id]
+2016-05-20 00:27:54.781 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_f48hvfcithp537h4ccie8a064, fk_30hw4hi3i796kjaspd978wpgy]
+2016-05-20 00:27:54.782 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [cloth_structure_pkey, uk_30hw4hi3i796kjaspd978wpgy]
+2016-05-20 00:27:55.087 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.cloth_type
+2016-05-20 00:27:55.092 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [type_name, id]
+2016-05-20 00:27:55.093 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 00:27:55.094 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [cloth_type_pkey]
+2016-05-20 00:27:55.351 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.colors
+2016-05-20 00:27:55.352 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [red, green, blue, id]
+2016-05-20 00:27:55.353 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 00:27:55.355 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [colors_pkey, rgb]
+2016-05-20 00:27:55.606 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.features
+2016-05-20 00:27:55.607 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [feature_name, id]
+2016-05-20 00:27:55.608 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 00:27:55.608 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [features_pkey]
+2016-05-20 00:27:55.896 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.messages
+2016-05-20 00:27:55.897 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [date, author, recipient, id, text, status]
+2016-05-20 00:27:55.899 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 00:27:55.900 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [messages_pkey]
+2016-05-20 00:27:56.146 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.orders
+2016-05-20 00:27:56.147 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [total_price, id, status]
+2016-05-20 00:27:56.147 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 00:27:56.148 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [orders_pkey]
+2016-05-20 00:27:56.397 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.orders_cloth
+2016-05-20 00:27:56.398 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [orders_id, clothset_id]
+2016-05-20 00:27:56.399 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_qfe1el4y2o4b0ffmvs3uhssxe, fk_om8nd99kpyunvt1386wvg62kc]
+2016-05-20 00:27:56.400 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [orders_cloth_pkey, uk_qfe1el4y2o4b0ffmvs3uhssxe]
+2016-05-20 00:27:56.660 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.payments
+2016-05-20 00:27:56.661 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [amount, id_order, date_time, comment, id, status]
+2016-05-20 00:27:56.662 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 00:27:56.664 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [payments_pkey]
+2016-05-20 00:27:56.911 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.structure
+2016-05-20 00:27:56.912 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [fabric, id]
+2016-05-20 00:27:56.913 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 00:27:56.914 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [structure_pkey]
+2016-05-20 00:27:57.215 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.users
+2016-05-20 00:27:57.216 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [password, role, balance, phone, addres, last_name, id, login, first_name, email]
+2016-05-20 00:27:57.218 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 00:27:57.219 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [users_pkey]
+2016-05-20 00:27:57.505 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.users_orders
+2016-05-20 00:27:57.506 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [orders_id, users_id]
+2016-05-20 00:27:57.507 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_1njdfitph68mh7p7c6f3qc736, fk_rd5g5e6fkbnqkaq5f624t2d8y]
+2016-05-20 00:27:57.508 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [uk_1njdfitph68mh7p7c6f3qc736, users_orders_pkey]
+2016-05-20 00:27:57.757 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.users_payments
+2016-05-20 00:27:57.758 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [payments_id, users_id]
+2016-05-20 00:27:57.759 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_prv1grhw10n09ru4176rwekwg, fk_gxm3xx7vnl3vwj482doo6htwn]
+2016-05-20 00:27:57.760 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [users_payments_pkey, uk_prv1grhw10n09ru4176rwekwg]
+2016-05-20 00:27:57.763 INFO  [RMI TCP Connection(3)-127.0.0.1] SchemaUpdate:242 - HHH000232: Schema update complete
+2016-05-20 00:27:58.577 INFO  [RMI TCP Connection(3)-127.0.0.1] HibernateTransactionManager:339 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@69772350] of Hibernate SessionFactory for HibernateTransactionManager
+2016-05-20 00:27:59.595 INFO  [RMI TCP Connection(3)-127.0.0.1] SimpleUrlHandlerMapping:315 - Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-05-20 00:27:59.698 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/test],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.AdminController.test()
+2016-05-20 00:27:59.701 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/admin-cloth],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.AdminController.getClothPage(org.springframework.ui.ModelMap) throws com.fasterxml.jackson.core.JsonProcessingException
+2016-05-20 00:27:59.702 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/admin-customers],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.AdminController.getCustomersPage(org.springframework.ui.ModelMap) throws com.fasterxml.jackson.core.JsonProcessingException
+2016-05-20 00:27:59.706 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/add-cloth],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.AdminController.addCloth()
+2016-05-20 00:27:59.707 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.LoginController.main()
+2016-05-20 00:27:59.709 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/ || /index],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.Main.main(org.springframework.ui.ModelMap)
+2016-05-20 00:27:59.716 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/404],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.error(org.springframework.ui.ModelMap)
+2016-05-20 00:27:59.717 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/services],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.services(org.springframework.ui.ModelMap)
+2016-05-20 00:27:59.718 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/blog-home-1],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.blogHome1(org.springframework.ui.ModelMap)
+2016-05-20 00:27:59.719 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/about],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.about(org.springframework.ui.ModelMap)
+2016-05-20 00:27:59.720 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/blog-home-2],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.blogHome2(org.springframework.ui.ModelMap)
+2016-05-20 00:27:59.722 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/blog-post],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.blogPost(org.springframework.ui.ModelMap)
+2016-05-20 00:27:59.722 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/contact],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.contact(org.springframework.ui.ModelMap)
+2016-05-20 00:27:59.725 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/faq],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.faq(org.springframework.ui.ModelMap)
+2016-05-20 00:27:59.726 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/full-width],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.fullWidth(org.springframework.ui.ModelMap)
+2016-05-20 00:27:59.727 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/portfolio-1-col],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.portfolio1col(org.springframework.ui.ModelMap)
+2016-05-20 00:27:59.728 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/portfolio-2-col],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.portfolio2col(org.springframework.ui.ModelMap)
+2016-05-20 00:27:59.730 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/portfolio-3-col],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.portfolio3col(org.springframework.ui.ModelMap)
+2016-05-20 00:27:59.731 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/portfolio-4-col],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.portfolio4col(org.springframework.ui.ModelMap)
+2016-05-20 00:27:59.732 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/portfolio-item],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.portfolioItem(org.springframework.ui.ModelMap)
+2016-05-20 00:27:59.734 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/pricing],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.pricing(org.springframework.ui.ModelMap)
+2016-05-20 00:27:59.735 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/sidebar],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.sidebar(org.springframework.ui.ModelMap)
+2016-05-20 00:27:59.743 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/cloth/read/all],methods=[GET],params=[],headers=[],consumes=[application/json],produces=[application/json],custom=[]}" onto public org.springframework.http.ResponseEntity<com.loskut.util.EntityPage<com.loskut.model.Cloth>> com.loskut.rest.ClothRestController.listAll()
+2016-05-20 00:27:59.752 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/cloth/read/filtered],methods=[POST],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}" onto public org.springframework.http.ResponseEntity<com.loskut.util.EntityPage<com.loskut.model.Cloth>> com.loskut.rest.ClothRestController.listFiltered(com.loskut.service.filters.ClothFilter)
+2016-05-20 00:27:59.755 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/cloth/update],methods=[POST],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.loskut.rest.ClothRestController.updateCloth(com.loskut.model.Cloth)
+2016-05-20 00:28:00.678 INFO  [RMI TCP Connection(3)-127.0.0.1] DefaultSecurityFilterChain:28 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@449789b1, org.springframework.security.web.context.SecurityContextPersistenceFilter@58b841db, org.springframework.security.web.header.HeaderWriterFilter@24af1fa8, org.springframework.security.web.authentication.logout.LogoutFilter@8c60c08, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@12d35bd9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@21046eb2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@564d1bf1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@653d9314, org.springframework.security.web.session.SessionManagementFilter@6da09daf, org.springframework.security.web.access.ExceptionTranslationFilter@26aea0bf, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@57eb64b3]
+2016-05-20 00:28:00.759 INFO  [RMI TCP Connection(3)-127.0.0.1] ContextLoader:325 - Root WebApplicationContext: initialization completed in 55337 ms
+2016-05-20 00:28:00.777 INFO  [RMI TCP Connection(3)-127.0.0.1] DispatcherServlet:479 - FrameworkServlet 'dispatcher': initialization started
+2016-05-20 00:28:00.835 INFO  [RMI TCP Connection(3)-127.0.0.1] DispatcherServlet:498 - FrameworkServlet 'dispatcher': initialization completed in 54 ms
+2016-05-20 00:28:08.883 WARN  [http-bio-8079-exec-6] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/custom-style.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:28:08.987 WARN  [http-bio-8079-exec-8] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/assets/css/bootstrap.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:28:09.015 WARN  [http-bio-8079-exec-8] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/bootstrap-slider.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:28:09.030 WARN  [http-bio-8079-exec-8] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/fancybox/jquery.fancybox-1.3.4.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:28:09.046 WARN  [http-bio-8079-exec-8] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/fancybox/jquery.mousewheel-3.0.4.pack.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:28:08.938 WARN  [http-bio-8079-exec-7] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:28:09.061 WARN  [http-bio-8079-exec-6] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/slider.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:28:08.931 WARN  [http-bio-8079-exec-10] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/bootstrap.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:28:08.962 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/fancybox/jquery.fancybox-1.3.4.pack.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:28:08.948 WARN  [http-bio-8079-exec-9] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/jquery-1.11.3.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:28:09.091 WARN  [http-bio-8079-exec-6] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/bootstrap.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:28:09.101 WARN  [http-bio-8079-exec-6] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/fancybox/jquery.fancybox-1.3.4.pack.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:28:09.119 WARN  [http-bio-8079-exec-6] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/slider.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:28:09.125 WARN  [http-bio-8079-exec-8] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/bootstrap-slider.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:28:09.152 WARN  [http-bio-8079-exec-6] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/fancybox/jquery.fancybox-1.3.4.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:28:09.271 WARN  [http-bio-8079-exec-6] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/fancybox/jquery.mousewheel-3.0.4.pack.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:28:09.310 WARN  [http-bio-8079-exec-6] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/fancybox/jquery.fancybox-1.3.4.pack.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:32.229 WARN  [http-bio-8079-exec-5] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/custom-style.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:32.239 WARN  [http-bio-8079-exec-5] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:32.249 WARN  [http-bio-8079-exec-5] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/assets/css/bootstrap.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:32.266 WARN  [http-bio-8079-exec-5] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/jquery-1.11.3.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:32.273 WARN  [http-bio-8079-exec-5] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/bootstrap.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:32.285 WARN  [http-bio-8079-exec-5] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.fancybox-1.3.4.pack.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:32.297 WARN  [http-bio-8079-exec-3] PageNotFound:1114 - No mapping found for HTTP request with URI [/js/bootstrap-slider.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:32.304 WARN  [http-bio-8079-exec-3] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.fancybox-1.3.4.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:32.311 WARN  [http-bio-8079-exec-3] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.mousewheel-3.0.4.pack.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:32.325 WARN  [http-bio-8079-exec-3] PageNotFound:1114 - No mapping found for HTTP request with URI [/assets/ico/favicon.png] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:32.337 WARN  [http-bio-8079-exec-3] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.fancybox-1.3.4.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:32.341 WARN  [http-bio-8079-exec-5] PageNotFound:1114 - No mapping found for HTTP request with URI [/css/slider.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:32.393 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/assets/ico/favicon.png] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:32.515 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.mousewheel-3.0.4.pack.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:32.540 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.fancybox-1.3.4.pack.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:36.188 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/custom-style.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:36.197 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/css/slider.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:36.203 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/js/bootstrap-slider.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:36.209 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.fancybox-1.3.4.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:36.217 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.mousewheel-3.0.4.pack.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:36.226 WARN  [http-bio-8079-exec-2] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/jquery-1.11.3.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:36.231 WARN  [http-bio-8079-exec-10] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.fancybox-1.3.4.pack.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:36.232 WARN  [http-bio-8079-exec-3] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:36.239 WARN  [http-bio-8079-exec-5] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/assets/css/bootstrap.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:36.246 WARN  [http-bio-8079-exec-7] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/bootstrap.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:36.333 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/bootstrap.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:36.351 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.fancybox-1.3.4.pack.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:36.393 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/css/slider.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:36.396 WARN  [http-bio-8079-exec-2] PageNotFound:1114 - No mapping found for HTTP request with URI [/js/bootstrap-slider.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:36.472 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.fancybox-1.3.4.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:36.546 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.mousewheel-3.0.4.pack.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:31:36.561 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.fancybox-1.3.4.pack.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:34:08.568 WARN  [http-bio-8079-exec-9] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/custom-style.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:34:08.578 WARN  [http-bio-8079-exec-9] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:34:08.587 WARN  [http-bio-8079-exec-9] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/assets/css/bootstrap.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:34:08.594 WARN  [http-bio-8079-exec-9] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/jquery-1.11.3.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:34:08.640 WARN  [http-bio-8079-exec-9] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/bootstrap.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:34:08.759 WARN  [http-bio-8079-exec-9] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.fancybox-1.3.4.pack.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:34:08.765 WARN  [http-bio-8079-exec-9] PageNotFound:1114 - No mapping found for HTTP request with URI [/js/bootstrap-slider.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:34:08.774 WARN  [http-bio-8079-exec-10] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/bootstrap.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:34:08.783 WARN  [http-bio-8079-exec-6] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.mousewheel-3.0.4.pack.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:34:08.783 WARN  [http-bio-8079-exec-9] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.fancybox-1.3.4.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:34:08.806 WARN  [http-bio-8079-exec-8] PageNotFound:1114 - No mapping found for HTTP request with URI [/css/slider.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:34:08.949 WARN  [http-bio-8079-exec-3] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.fancybox-1.3.4.pack.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:34:09.086 WARN  [http-bio-8079-exec-10] PageNotFound:1114 - No mapping found for HTTP request with URI [/js/bootstrap-slider.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:34:09.110 WARN  [http-bio-8079-exec-3] PageNotFound:1114 - No mapping found for HTTP request with URI [/css/slider.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:34:09.157 WARN  [http-bio-8079-exec-3] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.fancybox-1.3.4.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:34:09.493 WARN  [http-bio-8079-exec-3] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.mousewheel-3.0.4.pack.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:34:09.584 WARN  [http-bio-8079-exec-3] PageNotFound:1114 - No mapping found for HTTP request with URI [/fancybox/jquery.fancybox-1.3.4.pack.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:36:07.146 WARN  [http-bio-8079-exec-7] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/custom-style.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:36:07.152 WARN  [http-bio-8079-exec-7] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:36:07.156 WARN  [http-bio-8079-exec-7] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/assets/css/bootstrap.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:36:07.193 WARN  [http-bio-8079-exec-6] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/bootstrap.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:36:07.197 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/jquery-1.11.3.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:36:07.676 WARN  [http-bio-8079-exec-2] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/bootstrap.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:36:53.738 WARN  [http-bio-8079-exec-4] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/custom-style.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:36:53.742 WARN  [http-bio-8079-exec-4] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:36:53.748 WARN  [http-bio-8079-exec-4] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/assets/css/bootstrap.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:36:53.752 WARN  [http-bio-8079-exec-4] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/jquery-1.11.3.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:36:53.758 WARN  [http-bio-8079-exec-4] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/bootstrap.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:36:54.479 WARN  [http-bio-8079-exec-4] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/bootstrap.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:38:45.093 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/custom-style.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:38:45.119 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:38:45.134 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/assets/css/bootstrap.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:38:45.140 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/jquery-1.11.3.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:38:45.146 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/bootstrap.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:38:45.284 WARN  [http-bio-8079-exec-1] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/js/bootstrap.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:41:46.668 WARN  [http-bio-8079-exec-6] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:41:46.678 WARN  [http-bio-8079-exec-3] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/custom-style.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:41:54.354 WARN  [http-bio-8079-exec-5] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/custom-style.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:41:54.375 WARN  [http-bio-8079-exec-4] PageNotFound:1114 - No mapping found for HTTP request with URI [/pages/css/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:44:29.945 WARN  [http-bio-8079-exec-8] PageNotFound:1114 - No mapping found for HTTP request with URI [/js/jquery-1.11.3.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:44:38.815 WARN  [http-bio-8079-exec-8] PageNotFound:1114 - No mapping found for HTTP request with URI [/js/jquery-1.11.3.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:51:46.384 WARN  [http-bio-8079-exec-9] PageNotFound:1114 - No mapping found for HTTP request with URI [/js/bootstap.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:52:32.283 WARN  [http-bio-8079-exec-3] PageNotFound:1114 - No mapping found for HTTP request with URI [/js/bootstrap.js] in DispatcherServlet with name 'dispatcher'
+2016-05-20 00:55:13.672 WARN  [http-bio-8079-exec-3] PageNotFound:1114 - No mapping found for HTTP request with URI [/vcss/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 01:01:10.268 WARN  [http-bio-8079-exec-6] PageNotFound:1114 - No mapping found for HTTP request with URI [/vcss/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 01:10:00.863 WARN  [http-bio-8079-exec-7] PageNotFound:1114 - No mapping found for HTTP request with URI [/vcss/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 01:10:25.577 WARN  [http-bio-8079-exec-10] PageNotFound:1114 - No mapping found for HTTP request with URI [/vcss/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 01:10:53.273 WARN  [http-bio-8079-exec-7] PageNotFound:1114 - No mapping found for HTTP request with URI [/vcss/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 01:11:49.976 WARN  [http-bio-8079-exec-4] PageNotFound:1114 - No mapping found for HTTP request with URI [/vcss/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 01:12:05.881 WARN  [http-bio-8079-exec-4] PageNotFound:1114 - No mapping found for HTTP request with URI [/vcss/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 01:12:18.786 WARN  [http-bio-8079-exec-9] PageNotFound:1114 - No mapping found for HTTP request with URI [/vcss/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 01:13:20.777 INFO  [localhost-startStop-2] AnnotationConfigWebApplicationContext:873 - Closing Root WebApplicationContext: startup date [Fri May 20 00:27:05 EEST 2016]; root of context hierarchy
+2016-05-20 01:13:46.971 INFO  [RMI TCP Connection(2)-127.0.0.1] ContextLoader:285 - Root WebApplicationContext: initialization started
+2016-05-20 01:13:46.991 INFO  [RMI TCP Connection(2)-127.0.0.1] AnnotationConfigWebApplicationContext:513 - Refreshing Root WebApplicationContext: startup date [Fri May 20 01:13:46 EEST 2016]; root of context hierarchy
+2016-05-20 01:13:47.172 INFO  [RMI TCP Connection(2)-127.0.0.1] AnnotationConfigWebApplicationContext:208 - Registering annotated classes: [class com.loskut.configuration.AppConfig,class com.loskut.configuration.SecurityConfig]
+2016-05-20 01:13:51.505 INFO  [RMI TCP Connection(2)-127.0.0.1] DriverManagerDataSource:133 - Loaded JDBC driver: org.postgresql.Driver
+2016-05-20 01:13:52.195 INFO  [RMI TCP Connection(2)-127.0.0.1] Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-05-20 01:13:52.219 INFO  [RMI TCP Connection(2)-127.0.0.1] Version:54 - HHH000412: Hibernate Core {4.3.6.Final}
+2016-05-20 01:13:52.228 INFO  [RMI TCP Connection(2)-127.0.0.1] Environment:239 - HHH000206: hibernate.properties not found
+2016-05-20 01:13:52.233 INFO  [RMI TCP Connection(2)-127.0.0.1] Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-05-20 01:14:32.454 INFO  [RMI TCP Connection(2)-127.0.0.1] Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2016-05-20 01:14:32.497 INFO  [RMI TCP Connection(2)-127.0.0.1] LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-05-20 01:14:33.212 INFO  [RMI TCP Connection(2)-127.0.0.1] TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-05-20 01:14:33.238 INFO  [RMI TCP Connection(2)-127.0.0.1] ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-05-20 01:14:33.462 INFO  [RMI TCP Connection(2)-127.0.0.1] Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+2016-05-20 01:14:35.539 INFO  [RMI TCP Connection(2)-127.0.0.1] SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2016-05-20 01:14:35.542 INFO  [RMI TCP Connection(2)-127.0.0.1] SchemaUpdate:193 - HHH000102: Fetching database metadata
+2016-05-20 01:14:36.084 INFO  [RMI TCP Connection(2)-127.0.0.1] SchemaUpdate:205 - HHH000396: Updating schema
+2016-05-20 01:14:36.411 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.cloth
+2016-05-20 01:14:36.413 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [total_price, src, maincolor_id, length, width, price_per_meter, id, sku]
+2016-05-20 01:14:36.415 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_3rgfsmaexjvpt5py4645lonm6]
+2016-05-20 01:14:36.416 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [cloth_pkey]
+2016-05-20 01:14:36.685 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.cloth_cloth_type
+2016-05-20 01:14:36.686 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [cloth_id, tupes_id]
+2016-05-20 01:14:36.687 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_mx15hguxfi483gjse72jir12i, fk_74q3933owv84pkodjjeherw8p]
+2016-05-20 01:14:36.688 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [cloth_cloth_type_pkey, uk_74q3933owv84pkodjjeherw8p]
+2016-05-20 01:14:36.936 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.cloth_colors
+2016-05-20 01:14:36.938 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [cloth_id, colors_id]
+2016-05-20 01:14:36.939 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_4clkseor5v65qpyqtq87j9mf, fk_gfciad6lnwscp2aq89wntykyp]
+2016-05-20 01:14:36.944 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [cloth_colors_pkey, uk_4clkseor5v65qpyqtq87j9mf]
+2016-05-20 01:14:37.196 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.cloth_features
+2016-05-20 01:14:37.197 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [cloth_id, features_id]
+2016-05-20 01:14:37.198 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_qxwksmbwtub5w7hnyts6dqi4f, fk_rpgfdg3gtw9r24vv4xt4wy6i6]
+2016-05-20 01:14:37.199 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [cloth_features_pkey, uk_rpgfdg3gtw9r24vv4xt4wy6i6]
+2016-05-20 01:14:37.450 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.cloth_structure
+2016-05-20 01:14:37.452 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [cloth_id, structures_id]
+2016-05-20 01:14:37.455 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_f48hvfcithp537h4ccie8a064, fk_30hw4hi3i796kjaspd978wpgy]
+2016-05-20 01:14:37.457 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [cloth_structure_pkey, uk_30hw4hi3i796kjaspd978wpgy]
+2016-05-20 01:14:37.710 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.cloth_type
+2016-05-20 01:14:37.712 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [type_name, id]
+2016-05-20 01:14:37.714 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 01:14:37.715 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [cloth_type_pkey]
+2016-05-20 01:14:38.000 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.colors
+2016-05-20 01:14:38.002 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [red, green, blue, id]
+2016-05-20 01:14:38.003 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 01:14:38.004 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [colors_pkey, rgb]
+2016-05-20 01:14:38.252 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.features
+2016-05-20 01:14:38.253 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [feature_name, id]
+2016-05-20 01:14:38.254 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 01:14:38.255 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [features_pkey]
+2016-05-20 01:14:38.543 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.messages
+2016-05-20 01:14:38.544 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [date, author, recipient, id, text, status]
+2016-05-20 01:14:38.545 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 01:14:38.546 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [messages_pkey]
+2016-05-20 01:14:38.809 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.orders
+2016-05-20 01:14:38.810 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [total_price, id, status]
+2016-05-20 01:14:38.811 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 01:14:38.812 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [orders_pkey]
+2016-05-20 01:14:39.066 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.orders_cloth
+2016-05-20 01:14:39.067 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [orders_id, clothset_id]
+2016-05-20 01:14:39.068 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_qfe1el4y2o4b0ffmvs3uhssxe, fk_om8nd99kpyunvt1386wvg62kc]
+2016-05-20 01:14:39.069 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [orders_cloth_pkey, uk_qfe1el4y2o4b0ffmvs3uhssxe]
+2016-05-20 01:14:39.314 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.payments
+2016-05-20 01:14:39.316 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [amount, id_order, date_time, comment, id, status]
+2016-05-20 01:14:39.317 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 01:14:39.318 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [payments_pkey]
+2016-05-20 01:14:39.567 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.structure
+2016-05-20 01:14:39.568 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [fabric, id]
+2016-05-20 01:14:39.569 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 01:14:39.570 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [structure_pkey]
+2016-05-20 01:14:39.887 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.users
+2016-05-20 01:14:39.888 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [password, role, balance, phone, addres, last_name, id, login, first_name, email]
+2016-05-20 01:14:39.890 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 01:14:39.891 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [users_pkey]
+2016-05-20 01:14:40.180 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.users_orders
+2016-05-20 01:14:40.181 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [orders_id, users_id]
+2016-05-20 01:14:40.182 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_1njdfitph68mh7p7c6f3qc736, fk_rd5g5e6fkbnqkaq5f624t2d8y]
+2016-05-20 01:14:40.183 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [uk_1njdfitph68mh7p7c6f3qc736, users_orders_pkey]
+2016-05-20 01:14:40.474 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.users_payments
+2016-05-20 01:14:40.475 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [payments_id, users_id]
+2016-05-20 01:14:40.476 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_prv1grhw10n09ru4176rwekwg, fk_gxm3xx7vnl3vwj482doo6htwn]
+2016-05-20 01:14:40.478 INFO  [RMI TCP Connection(2)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [users_payments_pkey, uk_prv1grhw10n09ru4176rwekwg]
+2016-05-20 01:14:40.481 INFO  [RMI TCP Connection(2)-127.0.0.1] SchemaUpdate:242 - HHH000232: Schema update complete
+2016-05-20 01:14:41.496 INFO  [RMI TCP Connection(2)-127.0.0.1] HibernateTransactionManager:339 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@495852a] of Hibernate SessionFactory for HibernateTransactionManager
+2016-05-20 01:14:42.843 INFO  [RMI TCP Connection(2)-127.0.0.1] SimpleUrlHandlerMapping:315 - Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-05-20 01:14:42.965 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/test],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.AdminController.test()
+2016-05-20 01:14:42.966 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/admin-cloth],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.AdminController.getClothPage(org.springframework.ui.ModelMap) throws com.fasterxml.jackson.core.JsonProcessingException
+2016-05-20 01:14:42.967 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/admin-customers],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.AdminController.getCustomersPage(org.springframework.ui.ModelMap) throws com.fasterxml.jackson.core.JsonProcessingException
+2016-05-20 01:14:42.971 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/add-cloth],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.AdminController.addCloth()
+2016-05-20 01:14:42.973 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.LoginController.main()
+2016-05-20 01:14:42.974 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/ || /index],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.Main.main(org.springframework.ui.ModelMap)
+2016-05-20 01:14:42.982 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/404],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.error(org.springframework.ui.ModelMap)
+2016-05-20 01:14:42.983 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/services],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.services(org.springframework.ui.ModelMap)
+2016-05-20 01:14:42.984 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/blog-home-1],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.blogHome1(org.springframework.ui.ModelMap)
+2016-05-20 01:14:42.985 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/about],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.about(org.springframework.ui.ModelMap)
+2016-05-20 01:14:42.986 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/blog-home-2],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.blogHome2(org.springframework.ui.ModelMap)
+2016-05-20 01:14:42.988 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/blog-post],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.blogPost(org.springframework.ui.ModelMap)
+2016-05-20 01:14:42.989 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/contact],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.contact(org.springframework.ui.ModelMap)
+2016-05-20 01:14:42.991 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/faq],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.faq(org.springframework.ui.ModelMap)
+2016-05-20 01:14:42.992 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/full-width],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.fullWidth(org.springframework.ui.ModelMap)
+2016-05-20 01:14:42.994 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/portfolio-1-col],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.portfolio1col(org.springframework.ui.ModelMap)
+2016-05-20 01:14:42.995 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/portfolio-2-col],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.portfolio2col(org.springframework.ui.ModelMap)
+2016-05-20 01:14:42.996 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/portfolio-3-col],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.portfolio3col(org.springframework.ui.ModelMap)
+2016-05-20 01:14:42.999 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/portfolio-4-col],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.portfolio4col(org.springframework.ui.ModelMap)
+2016-05-20 01:14:43.000 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/portfolio-item],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.portfolioItem(org.springframework.ui.ModelMap)
+2016-05-20 01:14:43.001 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/pricing],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.pricing(org.springframework.ui.ModelMap)
+2016-05-20 01:14:43.003 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/sidebar],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.sidebar(org.springframework.ui.ModelMap)
+2016-05-20 01:14:43.009 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/cloth/read/all],methods=[GET],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}" onto public org.springframework.http.ResponseEntity<com.loskut.util.EntityPage<com.loskut.model.Cloth>> com.loskut.rest.ClothRestController.listAll()
+2016-05-20 01:14:43.017 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/cloth/read/filtered],methods=[POST],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}" onto public org.springframework.http.ResponseEntity<com.loskut.util.EntityPage<com.loskut.model.Cloth>> com.loskut.rest.ClothRestController.listFiltered(com.loskut.service.filters.ClothFilter)
+2016-05-20 01:14:43.020 INFO  [RMI TCP Connection(2)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/cloth/update],methods=[POST],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.loskut.rest.ClothRestController.updateCloth(com.loskut.model.Cloth)
+2016-05-20 01:14:43.968 INFO  [RMI TCP Connection(2)-127.0.0.1] DefaultSecurityFilterChain:28 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7b03a155, org.springframework.security.web.context.SecurityContextPersistenceFilter@44ee04c2, org.springframework.security.web.header.HeaderWriterFilter@6600daaf, org.springframework.security.web.authentication.logout.LogoutFilter@4663162c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@592558a7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@227ee6e4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2b5a542c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@727bb58b, org.springframework.security.web.session.SessionManagementFilter@759a873a, org.springframework.security.web.access.ExceptionTranslationFilter@25573db0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@756270df]
+2016-05-20 01:14:44.059 INFO  [RMI TCP Connection(2)-127.0.0.1] ContextLoader:325 - Root WebApplicationContext: initialization completed in 57080 ms
+2016-05-20 01:14:44.121 INFO  [RMI TCP Connection(2)-127.0.0.1] DispatcherServlet:479 - FrameworkServlet 'dispatcher': initialization started
+2016-05-20 01:14:44.202 INFO  [RMI TCP Connection(2)-127.0.0.1] DispatcherServlet:498 - FrameworkServlet 'dispatcher': initialization completed in 79 ms
+2016-05-20 01:14:52.479 WARN  [http-bio-8079-exec-7] PageNotFound:1114 - No mapping found for HTTP request with URI [/vcss/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 01:14:55.156 WARN  [http-bio-8079-exec-4] PageNotFound:1114 - No mapping found for HTTP request with URI [/vcss/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 01:16:17.483 WARN  [http-bio-8079-exec-8] PageNotFound:1114 - No mapping found for HTTP request with URI [/vcss/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 01:23:12.979 WARN  [http-bio-8079-exec-11] PageNotFound:1114 - No mapping found for HTTP request with URI [/vcss/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 01:25:28.564 WARN  [http-bio-8079-exec-7] PageNotFound:1114 - No mapping found for HTTP request with URI [/vcss/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 01:26:23.524 WARN  [http-bio-8079-exec-11] PageNotFound:1114 - No mapping found for HTTP request with URI [/undefined] in DispatcherServlet with name 'dispatcher'
+2016-05-20 01:26:23.774 WARN  [http-bio-8079-exec-11] PageNotFound:1114 - No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'dispatcher'
+2016-05-20 01:26:36.097 WARN  [http-bio-8079-exec-8] PageNotFound:1114 - No mapping found for HTTP request with URI [/vcss/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 01:27:18.806 WARN  [http-bio-8079-exec-4] PageNotFound:1114 - No mapping found for HTTP request with URI [/vcss/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 01:27:47.206 WARN  [http-bio-8079-exec-6] PageNotFound:1114 - No mapping found for HTTP request with URI [/vcss/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 01:29:32.483 WARN  [http-bio-8079-exec-10] PageNotFound:1114 - No mapping found for HTTP request with URI [/vcss/font-awesome.css] in DispatcherServlet with name 'dispatcher'
+2016-05-20 08:28:10.413 INFO  [RMI TCP Connection(3)-127.0.0.1] ContextLoader:285 - Root WebApplicationContext: initialization started
+2016-05-20 08:28:10.431 INFO  [RMI TCP Connection(3)-127.0.0.1] AnnotationConfigWebApplicationContext:513 - Refreshing Root WebApplicationContext: startup date [Fri May 20 08:28:10 EEST 2016]; root of context hierarchy
+2016-05-20 08:28:10.683 INFO  [RMI TCP Connection(3)-127.0.0.1] AnnotationConfigWebApplicationContext:208 - Registering annotated classes: [class com.loskut.configuration.AppConfig,class com.loskut.configuration.SecurityConfig]
+2016-05-20 08:28:15.448 INFO  [RMI TCP Connection(3)-127.0.0.1] DriverManagerDataSource:133 - Loaded JDBC driver: org.postgresql.Driver
+2016-05-20 08:28:16.136 INFO  [RMI TCP Connection(3)-127.0.0.1] Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-05-20 08:28:16.157 INFO  [RMI TCP Connection(3)-127.0.0.1] Version:54 - HHH000412: Hibernate Core {4.3.6.Final}
+2016-05-20 08:28:16.164 INFO  [RMI TCP Connection(3)-127.0.0.1] Environment:239 - HHH000206: hibernate.properties not found
+2016-05-20 08:28:16.172 INFO  [RMI TCP Connection(3)-127.0.0.1] Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-05-20 08:28:56.215 INFO  [RMI TCP Connection(3)-127.0.0.1] Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2016-05-20 08:28:56.256 INFO  [RMI TCP Connection(3)-127.0.0.1] LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-05-20 08:28:56.887 INFO  [RMI TCP Connection(3)-127.0.0.1] TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-05-20 08:28:56.902 INFO  [RMI TCP Connection(3)-127.0.0.1] ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-05-20 08:28:57.109 INFO  [RMI TCP Connection(3)-127.0.0.1] Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+2016-05-20 08:28:59.144 INFO  [RMI TCP Connection(3)-127.0.0.1] SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2016-05-20 08:28:59.145 INFO  [RMI TCP Connection(3)-127.0.0.1] SchemaUpdate:193 - HHH000102: Fetching database metadata
+2016-05-20 08:28:59.626 INFO  [RMI TCP Connection(3)-127.0.0.1] SchemaUpdate:205 - HHH000396: Updating schema
+2016-05-20 08:28:59.966 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.cloth
+2016-05-20 08:28:59.968 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [total_price, src, maincolor_id, length, width, price_per_meter, id, sku]
+2016-05-20 08:28:59.969 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_3rgfsmaexjvpt5py4645lonm6]
+2016-05-20 08:28:59.987 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [cloth_pkey]
+2016-05-20 08:29:00.251 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.cloth_cloth_type
+2016-05-20 08:29:00.253 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [cloth_id, tupes_id]
+2016-05-20 08:29:00.257 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_mx15hguxfi483gjse72jir12i, fk_74q3933owv84pkodjjeherw8p]
+2016-05-20 08:29:00.258 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [cloth_cloth_type_pkey, uk_74q3933owv84pkodjjeherw8p]
+2016-05-20 08:29:00.522 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.cloth_colors
+2016-05-20 08:29:00.523 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [cloth_id, colors_id]
+2016-05-20 08:29:00.525 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_4clkseor5v65qpyqtq87j9mf, fk_gfciad6lnwscp2aq89wntykyp]
+2016-05-20 08:29:00.527 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [cloth_colors_pkey, uk_4clkseor5v65qpyqtq87j9mf]
+2016-05-20 08:29:00.774 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.cloth_features
+2016-05-20 08:29:00.775 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [cloth_id, features_id]
+2016-05-20 08:29:00.776 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_qxwksmbwtub5w7hnyts6dqi4f, fk_rpgfdg3gtw9r24vv4xt4wy6i6]
+2016-05-20 08:29:00.777 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [cloth_features_pkey, uk_rpgfdg3gtw9r24vv4xt4wy6i6]
+2016-05-20 08:29:01.044 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.cloth_structure
+2016-05-20 08:29:01.046 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [cloth_id, structures_id]
+2016-05-20 08:29:01.048 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_f48hvfcithp537h4ccie8a064, fk_30hw4hi3i796kjaspd978wpgy]
+2016-05-20 08:29:01.049 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [cloth_structure_pkey, uk_30hw4hi3i796kjaspd978wpgy]
+2016-05-20 08:29:01.304 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.cloth_type
+2016-05-20 08:29:01.305 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [type_name, id]
+2016-05-20 08:29:01.308 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 08:29:01.309 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [cloth_type_pkey]
+2016-05-20 08:29:01.556 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.colors
+2016-05-20 08:29:01.557 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [red, green, blue, id]
+2016-05-20 08:29:01.558 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 08:29:01.561 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [colors_pkey, rgb]
+2016-05-20 08:29:01.810 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.features
+2016-05-20 08:29:01.811 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [feature_name, id]
+2016-05-20 08:29:01.813 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 08:29:01.814 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [features_pkey]
+2016-05-20 08:29:02.077 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.messages
+2016-05-20 08:29:02.078 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [date, author, recipient, id, text, status]
+2016-05-20 08:29:02.078 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 08:29:02.079 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [messages_pkey]
+2016-05-20 08:29:02.330 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.orders
+2016-05-20 08:29:02.332 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [total_price, id, status]
+2016-05-20 08:29:02.333 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 08:29:02.335 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [orders_pkey]
+2016-05-20 08:29:02.587 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.orders_cloth
+2016-05-20 08:29:02.589 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [orders_id, clothset_id]
+2016-05-20 08:29:02.590 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_qfe1el4y2o4b0ffmvs3uhssxe, fk_om8nd99kpyunvt1386wvg62kc]
+2016-05-20 08:29:02.591 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [orders_cloth_pkey, uk_qfe1el4y2o4b0ffmvs3uhssxe]
+2016-05-20 08:29:02.859 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.payments
+2016-05-20 08:29:02.860 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [amount, id_order, date_time, comment, id, status]
+2016-05-20 08:29:02.861 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 08:29:02.862 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [payments_pkey]
+2016-05-20 08:29:03.114 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.structure
+2016-05-20 08:29:03.116 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [fabric, id]
+2016-05-20 08:29:03.117 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 08:29:03.119 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [structure_pkey]
+2016-05-20 08:29:03.367 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.users
+2016-05-20 08:29:03.369 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [password, role, balance, phone, addres, last_name, id, login, first_name, email]
+2016-05-20 08:29:03.371 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: []
+2016-05-20 08:29:03.372 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [users_pkey]
+2016-05-20 08:29:03.624 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.users_orders
+2016-05-20 08:29:03.625 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [orders_id, users_id]
+2016-05-20 08:29:03.626 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_1njdfitph68mh7p7c6f3qc736, fk_rd5g5e6fkbnqkaq5f624t2d8y]
+2016-05-20 08:29:03.627 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [uk_1njdfitph68mh7p7c6f3qc736, users_orders_pkey]
+2016-05-20 08:29:03.874 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:66 - HHH000261: Table found: public.users_payments
+2016-05-20 08:29:03.875 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:67 - HHH000037: Columns: [payments_id, users_id]
+2016-05-20 08:29:03.876 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:69 - HHH000108: Foreign keys: [fk_prv1grhw10n09ru4176rwekwg, fk_gxm3xx7vnl3vwj482doo6htwn]
+2016-05-20 08:29:03.877 INFO  [RMI TCP Connection(3)-127.0.0.1] TableMetadata:70 - HHH000126: Indexes: [users_payments_pkey, uk_prv1grhw10n09ru4176rwekwg]
+2016-05-20 08:29:03.881 INFO  [RMI TCP Connection(3)-127.0.0.1] SchemaUpdate:242 - HHH000232: Schema update complete
+2016-05-20 08:29:04.554 INFO  [RMI TCP Connection(3)-127.0.0.1] HibernateTransactionManager:339 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@67403dee] of Hibernate SessionFactory for HibernateTransactionManager
+2016-05-20 08:29:06.797 INFO  [RMI TCP Connection(3)-127.0.0.1] SimpleUrlHandlerMapping:315 - Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-05-20 08:29:06.905 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/test],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.AdminController.test()
+2016-05-20 08:29:06.906 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/admin-cloth],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.AdminController.getClothPage(org.springframework.ui.ModelMap) throws com.fasterxml.jackson.core.JsonProcessingException
+2016-05-20 08:29:06.907 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/admin-customers],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.AdminController.getCustomersPage(org.springframework.ui.ModelMap) throws com.fasterxml.jackson.core.JsonProcessingException
+2016-05-20 08:29:06.908 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/add-cloth],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.AdminController.addCloth()
+2016-05-20 08:29:06.910 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.LoginController.main()
+2016-05-20 08:29:06.911 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/ || /index],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.Main.main(org.springframework.ui.ModelMap)
+2016-05-20 08:29:06.923 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/404],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.error(org.springframework.ui.ModelMap)
+2016-05-20 08:29:06.924 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/services],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.services(org.springframework.ui.ModelMap)
+2016-05-20 08:29:06.925 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/blog-home-1],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.blogHome1(org.springframework.ui.ModelMap)
+2016-05-20 08:29:06.926 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/about],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.about(org.springframework.ui.ModelMap)
+2016-05-20 08:29:06.927 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/blog-home-2],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.blogHome2(org.springframework.ui.ModelMap)
+2016-05-20 08:29:06.930 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/blog-post],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.blogPost(org.springframework.ui.ModelMap)
+2016-05-20 08:29:06.931 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/contact],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.contact(org.springframework.ui.ModelMap)
+2016-05-20 08:29:06.933 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/faq],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.faq(org.springframework.ui.ModelMap)
+2016-05-20 08:29:06.934 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/full-width],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.fullWidth(org.springframework.ui.ModelMap)
+2016-05-20 08:29:06.935 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/portfolio-1-col],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.portfolio1col(org.springframework.ui.ModelMap)
+2016-05-20 08:29:06.936 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/portfolio-2-col],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.portfolio2col(org.springframework.ui.ModelMap)
+2016-05-20 08:29:06.937 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/portfolio-3-col],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.portfolio3col(org.springframework.ui.ModelMap)
+2016-05-20 08:29:06.939 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/portfolio-4-col],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.portfolio4col(org.springframework.ui.ModelMap)
+2016-05-20 08:29:06.940 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/portfolio-item],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.portfolioItem(org.springframework.ui.ModelMap)
+2016-05-20 08:29:06.942 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/pricing],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.pricing(org.springframework.ui.ModelMap)
+2016-05-20 08:29:06.943 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/sidebar],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.loskut.controller.TrashController.sidebar(org.springframework.ui.ModelMap)
+2016-05-20 08:29:06.947 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/cloth/read/all],methods=[GET],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}" onto public org.springframework.http.ResponseEntity<com.loskut.util.EntityPage<com.loskut.model.Cloth>> com.loskut.rest.ClothRestController.listAll()
+2016-05-20 08:29:06.948 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/cloth/read/filtered],methods=[POST],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}" onto public org.springframework.http.ResponseEntity<com.loskut.util.EntityPage<com.loskut.model.Cloth>> com.loskut.rest.ClothRestController.listFiltered(com.loskut.service.filters.ClothFilter)
+2016-05-20 08:29:06.950 INFO  [RMI TCP Connection(3)-127.0.0.1] RequestMappingHandlerMapping:197 - Mapped "{[/cloth/update],methods=[POST],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.loskut.rest.ClothRestController.updateCloth(com.loskut.model.Cloth)
+2016-05-20 08:29:07.911 INFO  [RMI TCP Connection(3)-127.0.0.1] DefaultSecurityFilterChain:28 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@725f09bf, org.springframework.security.web.context.SecurityContextPersistenceFilter@2cd2a132, org.springframework.security.web.header.HeaderWriterFilter@75798229, org.springframework.security.web.authentication.logout.LogoutFilter@4de0cf7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@30ba5ad8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5205b1c1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35a60b77, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@44c4d955, org.springframework.security.web.session.SessionManagementFilter@375353e6, org.springframework.security.web.access.ExceptionTranslationFilter@29a2b955, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1e7a088b]
+2016-05-20 08:29:07.979 INFO  [RMI TCP Connection(3)-127.0.0.1] ContextLoader:325 - Root WebApplicationContext: initialization completed in 57560 ms
+2016-05-20 08:29:07.994 INFO  [RMI TCP Connection(3)-127.0.0.1] DispatcherServlet:479 - FrameworkServlet 'dispatcher': initialization started
+2016-05-20 08:29:08.056 INFO  [RMI TCP Connection(3)-127.0.0.1] DispatcherServlet:498 - FrameworkServlet 'dispatcher': initialization completed in 60 ms
+2016-05-20 08:30:54.920 WARN  [http-bio-8079-exec-10] PageNotFound:1114 - No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'dispatcher'
+2016-05-20 08:30:54.930 WARN  [http-bio-8079-exec-10] PageNotFound:1114 - No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'dispatcher'
+2016-05-20 08:48:49.853 INFO  [localhost-startStop-2] AnnotationConfigWebApplicationContext:873 - Closing Root WebApplicationContext: startup date [Fri May 20 08:28:10 EEST 2016]; root of context hierarchy

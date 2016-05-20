@@ -89,73 +89,68 @@
      style="z-index: 1051">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close"
-                        data-dismiss="modal"
-                        aria-label="Close"><span
-                        aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="mModalLabel">
-                    Редактор</h4>
+
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"><span
+                            aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="mModalLabel">Редактор</h4>
+                </div>
+
+
+<div class="modal-body" style="height: 480px">
+    <div class="col-xs-8">
+                <form role="form">
+
+                    <div class="form-group">
+                        <label for="modal-sku">Артикул</label>
+                        <input id="modal-sku" type="text" class="form-control" placeholder="Артикул">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modal-with">Ширина</label>
+                        <input id="modal-with" type="text" class="form-control" placeholder="Ширина">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modal-length">Длина</label>
+                        <input id="modal-length" type="text" class="form-control" placeholder="Длина">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modal-price">Цена за 1 м</label>
+                        <input id="modal-price" type="text" class="form-control" placeholder="Цена 1 м">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modal-total-price">Общая стоимость</label>
+                        <input id="modal-total-price" type="text" class="form-control" placeholder="Общая стоимость">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modal-img-url">Фото</label>
+                        <input id="modal-img-url" type="text" class="form-control" placeholder="Ссылка на фото">
+                        </div>
+
+                </form>
+    </div>
+            <div class="col-xs-4">
+                <img id="preview-img" src="#" style="width: 100px; height: 100px"; >
+                <div id="main-color" style="width: 150px; height: 40px; margin: 5px 5px 5px 0; "></div>
+                <div id="palette"></div>
+                <button id="btn" type="submit" class="btn btn-primary">Разложить</button>
             </div>
+</div>
 
-            <div class="col-xs-8">
-
-
-                <div class="form-group">
-                    <label for="modal-sku">Артикул<input id="modal-sku" type="text" class="form-control"
-                                                         placeholder="Артикул"></label>
-                </div>
-
-                <div class="form-group">
-                    <label for="modal-with">Ширина<input id="modal-with" type="text" class="form-control"
-                                                         placeholder="Ширина"></label>
-                </div>
-
-                <div class="form-group">
-                    <label for="modal-length">Длина<input id="modal-length" type="text"
-                                                          class="form-control"
-                                                          placeholder="Длина"></label>
-                </div>
-                <div class="form-group">
-                    <label for="modal-price">Цена за 1 м<input id="modal-price" type="text"
-                                                               class="form-control"
-                                                               placeholder="Цена 1 м"></label>
-                </div>
-                <div class="form-group">
-                    <label for="modal-total-price">Общая стоимость<input id="modal-total-price" type="text"
-                                                                         class="form-control"
-                                                                         placeholder="Общая стоимость"></label>
-                </div>
-                <div class="form-group">
-                    <label for="modal-img-url">Фото<input id="modal-img-url" type="text"
-                                                          class="form-control"
-                                                          placeholder="Ссылка на фото"></label>
-                </div>
-            </div>
+             <div class="modal-footer">
+        <button id="update-cloth" type="submit" class="btn btn-primary">Сохранить</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+             </div>
 
 
-            <img id="preview-img" src="#" style="width: 100px; height: 100px">
 
-            <div id="main-color" style="width: 50px; height: 50px;"></div>
-
-            <hr>
-
-            <div id="palette"></div>
-
-            <button id="btn">НАЖМИ</button>
-
-
-            <div class="modal-footer">
-
-                <button id="update-cloth" type="submit"
-                        class="btn btn-primary">Сохранить
-                </button>
-                <button type="button"
-                        class="btn btn-default"
-                        data-dismiss="modal">Отмена
-                </button>
-            </div>
 
         </div>
     </div>
