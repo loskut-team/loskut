@@ -4,9 +4,9 @@ package com.loskut.service;
  * Created by RAYANT on 26.04.2015.
  */
 
+import com.loskut.dao.interfaces.UserDao;
 import com.loskut.model.User;
 import com.loskut.model.enums.UserRole;
-import com.loskut.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,7 +23,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 
     @Autowired
-    private UserService dao;
+    private UserDao dao;
 
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
 
