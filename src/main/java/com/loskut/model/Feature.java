@@ -1,6 +1,7 @@
 package com.loskut.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.loskut.model.enums.FeatureType;
 
 import javax.persistence.*;
 
@@ -22,7 +23,8 @@ public class Feature{
 
     @Enumerated(EnumType.STRING)
     @Column(name = "feature_name")
-    private FetchType fetchType;
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private FeatureType featureType;
 
 
     public Feature() {
@@ -32,7 +34,7 @@ public class Feature{
     public String toString() {
         return "Feature{" +
                 "id=" + id +
-                ", fetchType=" + fetchType +
+                ", fetchType=" + featureType +
                 '}';
     }
 
@@ -45,12 +47,12 @@ public class Feature{
     }
 
 
-    public FetchType getFetchType() {
-        return fetchType;
+    public FeatureType getFeatureType() {
+        return featureType;
     }
 
-    public void setFetchType(FetchType fetchType) {
-        this.fetchType = fetchType;
+    public void setFeatureType(FeatureType featureType) {
+        this.featureType = featureType;
     }
 
 }

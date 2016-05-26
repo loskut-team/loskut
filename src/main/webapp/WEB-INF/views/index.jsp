@@ -163,6 +163,93 @@
     </footer>
 </div>
 
+
+<tiles:insertAttribute name="metrika"/>
+</body>
+<div class="modal fade" id="modal-1" style="width: 270px; top: 20%; left: 60%; display: none;">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title" style="margin-left: 15%;">Авторизация</h3>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="width: 200px;">
+                    <c:url value="/j_spring_security_check" var="loginUrl"/>
+                    <form action="${loginUrl}" method="post">
+                        <h2 class="form-signin-heading"></h2>
+                        <input type="text" class="form-control" name="j_username" placeholder="Login"
+                               style="width: 185px;">
+                        <input type="password" class="form-control" name="j_password" placeholder="Password"
+                               style="width: 185px;">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+                        <a class="btn btn-lg btn-primary btn-block" href="<c:url value="/restore" />">Восстановить
+                            пароль</a>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="btn btn-default" data-dismiss="modal">Отмена</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-2" style="width: 450px; top: 20%; left: 60%; display: none;">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title" style="margin-left: 15%;">Зарегистрируйтесь</h3>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="width: 400px;">
+                        <input maxlength="32" name="login" placeholder="Ваш логин" type="text" style="width:65%;">
+                        <input maxlength="32" name="password" placeholder="Ваш пароль" type="text" style="width:65%;">
+                        <input maxlength="64" name="email" placeholder="Ваш email" type="text" style="width:65%;">
+                        <button id="reg-btn" class="btn btn-lg btn-primary btn-block" type="submit" style="width: 70%;">Подтвердить
+                        </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="btn btn-default" data-dismiss="modal">Отмена</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-3" style="width: 450px; top: 20%; left: 60%; display: none;">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title" style="text-align: center;">Восстановление<br>учетной записи</h3>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="width: 300px;">
+                    <form action="/restore" method="post">
+                        <p>Введите логин или e-mail учетной записи.<br>Новый пароль будет отправлен на e-mail который
+                            был указан при регистрации.</p>
+                        <input type="text" class="form-control" name="j_email" placeholder="Ваш email или логин">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Подтвердить</button>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="btn btn-default" data-dismiss="modal">Отмена</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var slider = new Slider('#sl1', {});
+</script>
+<script>
+    var slider = new Slider('#sl2', {});
+</script>
 <script type="text/javascript">
     var $= jQuery.noConflict();
     $.ajax({
@@ -186,18 +273,18 @@
         }
 
     });
-//    $(document).ready(function () {
-//
-//        $("a[rel=example_group]").fancybox({
-//            'transitionIn': 'none',
-//            'transitionOut': 'none',
-//            'titlePosition': 'over',
-//            'titleFormat': function (title) {
-//
-//                return '<span id="fancybox-title-over">' + (title.length ? ' &nbsp; ' + title : '') + '</span>';
-//            }
-//        })
-//    });
+    //    $(document).ready(function () {
+    //
+    //        $("a[rel=example_group]").fancybox({
+    //            'transitionIn': 'none',
+    //            'transitionOut': 'none',
+    //            'titlePosition': 'over',
+    //            'titleFormat': function (title) {
+    //
+    //                return '<span id="fancybox-title-over">' + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+    //            }
+    //        })
+    //    });
 </script>
 
 <script type="text/javascript">
@@ -244,99 +331,25 @@
     }
     ;
 </script>
-<tiles:insertAttribute name="metrika"/>
-</body>
-
-<div class="modal fade" id="modal-1" style="width: 270px; top: 20%; left: 60%; display: none;">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h3 class="modal-title" style="margin-left: 15%;">Авторизация</h3>
-            </div>
-            <div class="modal-body">
-                <div class="container" style="width: 200px;">
-                    <c:url value="/j_spring_security_check" var="loginUrl"/>
-                    <form action="${loginUrl}" method="post">
-                        <h2 class="form-signin-heading"></h2>
-                        <input type="text" class="form-control" name="j_username" placeholder="Login"
-                               style="width: 185px;">
-                        <input type="password" class="form-control" name="j_password" placeholder="Password"
-                               style="width: 185px;">
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
-                        <a class="btn btn-lg btn-primary btn-block" href="<c:url value="/restore" />">Восстановить
-                            пароль</a>
-                    </form>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <a href="" class="btn btn-default" data-dismiss="modal">Отмена</a>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="modal-2" style="width: 450px; top: 20%; left: 60%; display: none;">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h3 class="modal-title" style="margin-left: 15%;">Зарегистрируйтесь</h3>
-            </div>
-            <div class="modal-body">
-                <div class="container" style="width: 400px;">
-                    <form name="reg" action="/registration" method="post">
-                        <input name="releFio" type="hidden">
-                        <input name="releEmail" type="hidden">
-                        <input maxlength="32" name="j_username" placeholder="Ваш логин" type="text" style="width:65%;"
-                               onchange="responseFio();">
-                        <span id="responseFioSpan" style="margin-left: 10px;"></span>
-                        <input maxlength="32" name="j_password" placeholder="Ваш пароль" type="text" style="width:65%;">
-                        <input maxlength="64" name="j_email" placeholder="Ваш email" type="text" style="width:65%;"
-                               onchange="responseEmail();">
-                        <span id="responseEmailSpan" style="margin-left: 10px;"></span>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 70%;">Подтвердить
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <a href="" class="btn btn-default" data-dismiss="modal">Отмена</a>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="modal-3" style="width: 450px; top: 20%; left: 60%; display: none;">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h3 class="modal-title" style="text-align: center;">Восстановление<br>учетной записи</h3>
-            </div>
-            <div class="modal-body">
-                <div class="container" style="width: 300px;">
-                    <form action="/restore" method="post">
-                        <p>Введите логин или e-mail учетной записи.<br>Новый пароль будет отправлен на e-mail который
-                            был указан при регистрации.</p>
-                        <input type="text" class="form-control" name="j_email" placeholder="Ваш email или логин">
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Подтвердить</button>
-                    </form>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <a href="" class="btn btn-default" data-dismiss="modal">Отмена</a>
-            </div>
-        </div>
-    </div>
-</div>
-
 <script>
-    var slider = new Slider('#sl1', {});
-</script>
-<script>
-    var slider = new Slider('#sl2', {});
+    $('#reg-btn').on('click',function(){
+        var user={};
+        user.login=$('[name=login]').val();
+        user.email=$('[name=email]').val();
+        user.password=$('[name=password]').val();
+        $.ajax({
+            type: "POST",
+            url: "/registration",
+            data: JSON.stringify(user),
+            dataType:"application/json",
+            contentType: "application/json",
+            cache: false,
+            statusCode: {
+                200: function(response) {
+                    alert(JSON.stringify(response));
+                }
+            }
+        });
+    })
 </script>
 </html>

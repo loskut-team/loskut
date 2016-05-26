@@ -1,9 +1,12 @@
 package com.loskut.model;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import javax.persistence.criteria.*;
 import javax.validation.constraints.Digits;
 import java.math.BigDecimal;
 import java.util.Set;
@@ -14,6 +17,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "cloth")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Cloth {
 
     @Id
@@ -44,20 +48,24 @@ public class Cloth {
     @Column(name = "total_price")
     private BigDecimal totalPrice;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Color> colors;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Color mainColor;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Structure> structures;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Feature> features;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<ClothType> tupes;
+
+    @ManyToOne
+    @JsonBackReference
+    private Order order;
 
     public Cloth() {
     }
@@ -160,7 +168,6 @@ public class Cloth {
 
     @Override
     public String toString() {
-        System.out.println();
         return "Cloth{" +
                 "id=" + id +
                 ", sku='" + sku + '\'' +
@@ -170,6 +177,7 @@ public class Cloth {
                 ", width=" + width +
                 ", totalPrice=" + totalPrice +
                 ", colors=" + colors +
+                ", mainColor=" + mainColor +
                 ", structures=" + structures +
                 ", features=" + features +
                 ", tupes=" + tupes +

@@ -8,4 +8,6 @@ import com.loskut.model.User;
 public interface UserDao extends GenericDao<Integer,User> {
 
     User findUserByLogin(String login);
+
+    User findUserByEmail(String email);
 }

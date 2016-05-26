@@ -1,5 +1,6 @@
 package com.loskut.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.loskut.model.enums.UserRole;
 
@@ -54,14 +55,15 @@ public class User  {
     @NotNull
     @Digits(integer=8, fraction=2)
     @Column(name = "balance")
-    private BigDecimal balance;
+    private BigDecimal balance = new BigDecimal(0);
 
-    @OneToMany (fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany (fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonManagedReference
     private Set<Order> orders;
 
-    @OneToMany (fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany (fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonManagedReference
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Set<Payment> payments;
 
     public String getPhone() {

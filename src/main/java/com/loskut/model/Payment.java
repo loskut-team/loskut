@@ -1,5 +1,6 @@
 package com.loskut.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -35,6 +36,10 @@ public class Payment {
 
     @Column(name = "date_time")
     private Date date;
+
+    @ManyToOne
+    @JsonBackReference
+    private User user;
 
     public Payment() {
     }

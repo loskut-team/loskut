@@ -3,6 +3,11 @@ package com.loskut.model;
 
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.hibernate.annotations.Index;
 
 /**
@@ -18,6 +23,7 @@ import org.hibernate.annotations.Index;
                 )
         }
 )
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Color {
 
 

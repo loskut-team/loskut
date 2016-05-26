@@ -6,6 +6,6 @@
     <file url="file://$PROJECT_DIR$/settings.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/loskut/configuration/SecurityConfig.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/loskut/service/UserDetailsServiceImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

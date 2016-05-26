@@ -1,6 +1,7 @@
 package com.loskut.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.loskut.model.enums.OrderStatus;
 
@@ -30,8 +31,9 @@ public class Order {
     public Order() {
     }
 
-    @OneToMany (fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany (fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonManagedReference
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Set<Cloth> clothSet;
 
     @Column(name = "total_price")
@@ -41,6 +43,9 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
+    @ManyToOne
+    @JsonBackReference
+    private User user;
 
     public int getId() {
         return id;
