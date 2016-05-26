@@ -1,8 +1,8 @@
 package com.loskut.rest;
 
+import com.loskut.dao.interfaces.ClothDao;
 import com.loskut.model.Cloth;
 import com.loskut.service.filters.ClothFilter;
-import com.loskut.service.interfaces.ClothService;
 import com.loskut.util.EntityPage;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +26,12 @@ import java.util.List;
 public class ClothRestController {
 
     @Autowired
-    private ClothService clothService;
+    private ClothDao clothDao;
 
     @RequestMapping(value = "/read/filtered", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<EntityPage<Cloth>> listFiltered(@RequestBody ClothFilter clothFilter) {
         System.out.println("/cloth/read/filtered");
-        EntityPage<Cloth> clothEntityPage = clothService.listAllWithFilter(clothFilter);
+        EntityPage<Cloth> clothEntityPage = clothDao.listAllWithFilter(clothFilter);
         if (clothEntityPage.getEntities().isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
@@ -44,7 +44,7 @@ public class ClothRestController {
     public ResponseEntity<EntityPage<Cloth>> listAll() {
         System.out.println("/cloth/read/all");
         EntityPage<Cloth> clothEntityPage = new EntityPage<>();
-        List<Cloth> cloths = clothService.listAll();
+        List<Cloth> cloths = clothDao.listAll();
         Hibernate.initialize(cloths);
         clothEntityPage.setEntities(cloths);
         clothEntityPage.setTotalEntities((long) cloths.size());
@@ -60,7 +60,7 @@ public class ClothRestController {
     public ResponseEntity<Void> updateCloth(@RequestBody Cloth cloth) {
 
 
-        clothService.update(cloth);
+        clothDao.update(cloth);
 
         return new ResponseEntity<>(HttpStatus.OK);
     }

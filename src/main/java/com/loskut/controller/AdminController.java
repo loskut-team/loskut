@@ -3,11 +3,8 @@ package com.loskut.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+import com.loskut.dao.interfaces.ClothDao;
 import com.loskut.model.Cloth;
-import com.loskut.service.interfaces.ClothService;
-import com.loskut.service.interfaces.OrderService;
-import com.loskut.service.interfaces.UserService;
-import com.loskut.util.EntityPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -27,7 +24,7 @@ public class AdminController {
 //    private UserService userService;
 
     @Autowired
-    private ClothService clothService;
+    private ClothDao clothDao;
 
 //    @Autowired
 //    private OrderService orderService;
@@ -35,7 +32,7 @@ public class AdminController {
     @RequestMapping("/admin-cloth")
     public String getClothPage(ModelMap model) throws JsonProcessingException {
 
-        List<Cloth> clothList = clothService.listAll();
+        List<Cloth> clothList = clothDao.listAll();
         ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
         String json = ow.writeValueAsString(clothList);
 //        String json = gson.toJson(clothList);
@@ -47,7 +44,7 @@ public class AdminController {
     @RequestMapping("/admin-customers")
     public String getCustomersPage(ModelMap model) throws JsonProcessingException {
 
-//        List<Cloth> clothList = clothService.listAll();
+//        List<Cloth> clothList = clothDao.listAll();
 //        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 //        String json = ow.writeValueAsString(clothList);
 ////        String json = gson.toJson(clothList);

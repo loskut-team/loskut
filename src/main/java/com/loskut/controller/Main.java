@@ -1,7 +1,7 @@
 package com.loskut.controller;
 
+import com.loskut.dao.interfaces.UserDao;
 import com.loskut.model.User;
-import com.loskut.service.interfaces.UserService;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,12 +20,12 @@ import java.util.List;
 public class Main {
 
     @Autowired
-    private  UserService userService;
+    private UserDao userDao;
 
 
     @RequestMapping(value = {"/","/index"})
        public String main(ModelMap model) {
-        List<User> users = userService.listAll();
+        List<User> users = userDao.listAll();
         Hibernate.initialize(users);
         System.out.println("users: "+users);
         model.addAttribute("users", users);

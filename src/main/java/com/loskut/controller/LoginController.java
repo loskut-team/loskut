@@ -2,25 +2,18 @@ package com.loskut.controller;
 
 import com.loskut.dao.interfaces.UserDao;
 import com.loskut.model.User;
-import com.loskut.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by RAYANT on 14.01.2016.
  */
 @Controller
 public class LoginController {
-
-
-    @Autowired
-    private UserService userService;
 
     @Autowired
     private UserDao userDao;
@@ -53,6 +46,14 @@ public class LoginController {
         }
         userDao.save(registrationForm);
         return new ResponseEntity<String>("registered", HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/registration/check", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> check(@RequestParam(value = "email",required = false)String email,
+                                        @RequestParam(value = "login",required = false)String login){
+        if(email!=null && userDao.findUserByEmail(email)!=null)return new ResponseEntity<String>("found", HttpStatus.FOUND);
+        if(login!=null && userDao.findUserByLogin(login)!=null)return new ResponseEntity<String>("found", HttpStatus.FOUND);
+        return new ResponseEntity<String>("free", HttpStatus.OK);
     }
 
 }
