@@ -332,6 +332,23 @@
     ;
 </script>
 <script>
+    $('[name=login]').on('change',function (){
+        $.ajax({
+            type: "GET",
+            url: "/registration/check",
+            data: {login:this.val()},
+            dataType:"application/json",
+            cache: false,
+            statusCode: {
+                200: function(response) {
+                    alert('ok');
+                },
+                301:function(response){
+                    alert('no')
+                }
+            }
+        });
+    }
     $('#reg-btn').on('click',function(){
         var user={};
         user.login=$('[name=login]').val();
