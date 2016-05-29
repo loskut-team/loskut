@@ -6,11 +6,13 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <jsp:include page="/WEB-INF/templates/title.jsp"/>
-    <jsp:include page="/WEB-INF/templates/srcLinks.jsp"/>
 
-    <script type="text/javascript" src="/resources/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-    <script type="text/javascript" src="/resources/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+    <title>Loskut.com.ua | магазин мерного лоскута</title>
+
+    <link type="text/css" rel="stylesheet" href="/resources/css/custom-style.css">
+    <link type="text/css" rel="stylesheet" href="/resources/css/font-awesome.css">
+    <link href="/resources/assets/css/bootstrap.css" rel="stylesheet">
+
 
     <style type="text/css">body {
         padding-top: 60px;
@@ -21,14 +23,11 @@
         padding: 9px 0;
     }</style>
 
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
     <link rel="shortcut icon" href="/resources/assets/ico/favicon.png">
 
     <link type="text/css" rel="stylesheet" href="/resources/css/slider.css">
-    <script src="/resources/js/bootstrap-slider.js" type="text/javascript"></script>
+
 
     <link rel="stylesheet" type="text/css" href="/resources/fancybox/jquery.fancybox-1.3.4.css" media="screen"/>
 
@@ -164,7 +163,7 @@
 </div>
 
 
-<tiles:insertAttribute name="metrika"/>
+<%--<tiles:insertAttribute name="metrika"/>--%>
 </body>
 <div class="modal fade" id="modal-1" style="width: 270px; top: 20%; left: 60%; display: none;">
     <div class="modal-dialog modal-sm">
@@ -245,14 +244,37 @@
     </div>
 </div>
 
+
+
+
+
+
+<script src="/resources/js/jquery-1.12.3.min.js" type="text/javascript"></script>
+<%--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.js" type="text/javascript"></script>--%>
+
+<%--<!--[if lt IE 9]>--%>
+<%--<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>--%>
+<%--<![endif]-->--%>
+
+<script src="/resources/js/bootstrap-slider.js" type="text/javascript"></script>
+<script src="/resources/js/bootstrap.js" type="text/javascript"></script>
+
+
+<script type="text/javascript" src="/resources/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+
+<script type="text/javascript" src="/resources/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+
+
+
+<%--<script>--%>
+    <%--var slider = new Slider('#sl1', {});--%>
+<%--</script>--%>
+<%--<script>--%>
+    <%--var slider = new Slider('#sl2', {});--%>
+<%--</script>--%>
 <script>
-    var slider = new Slider('#sl1', {});
-</script>
-<script>
-    var slider = new Slider('#sl2', {});
-</script>
-<script type="text/javascript">
-    var $ = jQuery.noConflict();
+
     $.ajax({
         type: "GET",
         url: "/cloth/read/all",
