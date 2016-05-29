@@ -205,11 +205,12 @@
             </div>
             <div class="modal-body">
                 <div class="container" style="width: 400px;">
-                        <input maxlength="32" name="login" placeholder="Ваш логин" type="text" style="width:65%;">
-                        <input maxlength="32" name="password" placeholder="Ваш пароль" type="text" style="width:65%;">
-                        <input maxlength="64" name="email" placeholder="Ваш email" type="text" style="width:65%;">
-                        <button id="reg-btn" class="btn btn-lg btn-primary btn-block" type="submit" style="width: 70%;">Подтвердить
-                        </button>
+                    <input maxlength="32" name="login" placeholder="Ваш логин" type="text" style="width: 100%">
+                    <input maxlength="32" name="password" placeholder="Ваш пароль" type="text" style="width: 100%">
+                    <input maxlength="64" name="email" placeholder="Ваш email" type="text" style="width: 100%">
+                    <button id="reg-btn" class="btn btn-lg btn-primary btn-block" type="submit">
+                        Подтвердить
+                    </button>
                 </div>
             </div>
             <div class="modal-footer">
@@ -251,7 +252,7 @@
     var slider = new Slider('#sl2', {});
 </script>
 <script type="text/javascript">
-    var $= jQuery.noConflict();
+    var $ = jQuery.noConflict();
     $.ajax({
         type: "GET",
         url: "/cloth/read/all",
@@ -332,37 +333,69 @@
     ;
 </script>
 <script>
-    $('[name=login]').on('change',function (){
+    var emailfree = true;
+    var loginfree = true;
+    var buttonfreezy = function (emailfree, loginfree) {
+        if (emailfree && loginfree) {
+            $('#reg-btn').prop("disabled", false);
+        } else {
+            $('#reg-btn').prop("disabled", true);
+        }
+
+    };
+    $('[name=login]').keyup(function () {
         $.ajax({
             type: "GET",
             url: "/registration/check",
-            data: {login:this.val()},
-            dataType:"application/json",
+            data: {login: this.value},
+            dataType: "application/json",
             cache: false,
             statusCode: {
-                200: function(response) {
-                    alert('ok');
+                200: function (response) {
+                    loginfree = true;
+                    buttonfreezy(emailfree, loginfree);
                 },
-                301:function(response){
-                    alert('no')
+                302: function (response) {
+                    loginfree = false;
+                    buttonfreezy(emailfree, loginfree);
                 }
             }
         });
-    }
-    $('#reg-btn').on('click',function(){
-        var user={};
-        user.login=$('[name=login]').val();
-        user.email=$('[name=email]').val();
-        user.password=$('[name=password]').val();
+    });
+    $('[name=email]').keyup(function () {
+        $.ajax({
+            type: "GET",
+            url: "/registration/check",
+            data: {email: this.value},
+            dataType: "application/json",
+            cache: false,
+            statusCode: {
+                200: function (response) {
+                    emailfree = true;
+                    buttonfreezy(emailfree, loginfree);
+                },
+                302: function (response) {
+                    emailfree = false;
+                    buttonfreezy(emailfree, loginfree);
+                }
+            }
+        });
+    });
+    $('#reg-btn').on('click', function () {
+        if (!loginfree || !emailfree)return;
+        var user = {};
+        user.login = $('[name=login]').val();
+        user.email = $('[name=email]').val();
+        user.password = $('[name=password]').val();
         $.ajax({
             type: "POST",
             url: "/registration",
             data: JSON.stringify(user),
-            dataType:"application/json",
+            dataType: "application/json",
             contentType: "application/json",
             cache: false,
             statusCode: {
-                200: function(response) {
+                200: function (response) {
                     alert(JSON.stringify(response));
                 }
             }
